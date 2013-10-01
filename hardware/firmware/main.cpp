@@ -34,8 +34,8 @@
 #include <avr/sleep.h>
 
 /* Pin allocation
- * PB0 => chip select
- * PC4 => pulse signal
+ * PD2 => chip select
+ * PD3 => pulse+ signal
  */
 
 /* Pulse generation uses the COUNTER1, TIMER1 COMPARATOR A, and the folling
@@ -56,7 +56,7 @@ void start_pulses(uint8_t pulses) {
     TIMSK1 |= 1<<OCIE1A; // interrupt on match
     OCR1A = 313;
     remain_pulses = pulses;
-    PORTC |= 1<<PC4;
+    PORTD |= 1<<PD3;
   }
 }
 
@@ -66,11 +66,11 @@ ISR (INT0_vect)
 }
 
 ISR(TIMER1_COMPA_vect) {
-  if (PORTC & (1<<PC4)) {
-    PORTC &= ~(1<<PC4);
+  if (PORTD & (1<<PD3)) {
+    PORTD &= ~(1<<PD3);
   } else {
     if (--remain_pulses) {
-      PORTC |= 1<<PC4;
+      PORTD |= 1<<PD3;
     } else {
       TCCR1B &= ~(1<<CS10);
       TIMSK1 &= ~(1<<OCIE1A);
@@ -84,8 +84,8 @@ int main() {
   // I/O set up
   DDRB = 0xFF;
   PORTB = 0x00;
-  DDRC |= 1<<PC4;
-  PORTC &= ~(1<<PC4);
+  DDRD |= 1<<PD3;
+  PORTD &= ~(1<<PD3);
 
   // Set up interruption on falling edge of chip_select
   DDRD &= ~(1 << DDD2); // Set PD2 as input
