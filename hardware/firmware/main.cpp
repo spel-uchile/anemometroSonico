@@ -34,9 +34,31 @@
 #include <avr/sleep.h>
 
 /* Pin allocation
+ * PB0 => ADC select 0
+ * PB1 => ADC select 1
+ * PB2 => ADC select 2
  * PD2 => chip select
  * PD3 => pulse+ signal
  */
+
+/* System State Machine.
+ * The sistem state is evaluated in TIMER0 COMPARARTOR A interruption. The
+ *following definitions control the state machine.
+ */
+// FSM states.
+typedef enum {
+  IDLE,
+  DRIVE_NORTH,
+  LISTEN_SOUTH
+} state_t;
+// FSM current state.
+state_t state_;
+// FSM next state.
+state_t next_state_;
+// wheter we are waiting for an event to happen (to avoid scheduling an event
+// twice).
+bool timer0_running_ = false;
+
 
 /* Pulse generation uses the COUNTER1, TIMER1 COMPARATOR A, and the folling
  * variables.
@@ -60,11 +82,25 @@ void start_pulses(uint8_t pulses) {
   }
 }
 
-ISR (INT0_vect)
-{
-  start_pulses(6);
+// schedule to evaluate the event next_state in ticks ticks.
+void setup_timer(uint8_t ticks, state_t next_state) {
+  if (!timer0_running_) {
+    timer0_running_ = true;
+    next_state_ = next_state;
+    TCNT0 = 0;
+    TCCR0B |= (1<<CS01) | (1<<CS00); //64 preescaling
+    TIMSK0 |= 1<<OCIE0A;
+    OCR0A = ticks;
+  }
 }
 
+ISR (INT0_vect)
+{
+  // The first event is delayed so the ADC is already taking samples.
+  setup_timer(125, DRIVE_NORTH);
+}
+
+// pulse generation interrupt.
 ISR(TIMER1_COMPA_vect) {
   if (PORTD & (1<<PD3)) {
     PORTD &= ~(1<<PD3);
@@ -80,10 +116,36 @@ ISR(TIMER1_COMPA_vect) {
   OCR1A += 314;
 }
 
+
+
+ISR(TIMER0_COMPA_vect) {
+  timer0_running_ = false;
+  TCCR0B &= 0xF8; //disable counter
+  TIMSK0 &= ~(1<<OCIE0A); // disable interrupt
+  state_ = next_state_;
+  switch (state_) {
+  case IDLE:
+    break;
+  case DRIVE_NORTH:
+    PORTB = 0x00;
+    PORTC = 0x10;
+    start_pulses(6);
+    setup_timer(70, LISTEN_SOUTH);
+    break;
+  case LISTEN_SOUTH:
+    PORTB = 0x01;
+    PORTC = 0x00;
+    setup_timer(125, IDLE);
+    break;
+  }
+}
+
 int main() {
   // I/O set up
   DDRB = 0xFF;
   PORTB = 0x00;
+  DDRC = 0xFF;
+  PORTC = 0x00;
   DDRD |= 1<<PD3;
   PORTD &= ~(1<<PD3);
 
