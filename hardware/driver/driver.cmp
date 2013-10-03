@@ -1,0 +1,227 @@
+Cmp-Mod V01 Created by CvPcb (2012-apr-16-27)-stable date = Thu Oct  3 10:43:18 2013
+
+BeginCmp
+TimeStamp = /52457000;
+Reference = C1;
+ValeurCmp = 0.1u;
+IdModule  = SM1206;
+EndCmp
+
+BeginCmp
+TimeStamp = /52456DF2;
+Reference = C2;
+ValeurCmp = 0.1u;
+IdModule  = SM1206;
+EndCmp
+
+BeginCmp
+TimeStamp = /52456F3B;
+Reference = C3;
+ValeurCmp = 22p;
+IdModule  = SM0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /52456F35;
+Reference = C4;
+ValeurCmp = 22p;
+IdModule  = SM0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /524D49DC;
+Reference = C5;
+ValeurCmp = 0.1u;
+IdModule  = SM1206;
+EndCmp
+
+BeginCmp
+TimeStamp = /524D49E0;
+Reference = C6;
+ValeurCmp = 0.1u;
+IdModule  = SM1206;
+EndCmp
+
+BeginCmp
+TimeStamp = /52456E5C;
+Reference = CON1;
+ValeurCmp = AVR-ISP-10;
+IdModule  = PIN_ARRAY_5x2;
+EndCmp
+
+BeginCmp
+TimeStamp = /52456DAF;
+Reference = IC1;
+ValeurCmp = ATMEGA328P-A;
+IdModule  = TQFP32;
+EndCmp
+
+BeginCmp
+TimeStamp = /52457413;
+Reference = K1;
+ValeurCmp = CONN_3;
+IdModule  = bornier3;
+EndCmp
+
+BeginCmp
+TimeStamp = /524561A5;
+Reference = P1;
+ValeurCmp = CONN_2;
+IdModule  = bornier2;
+EndCmp
+
+BeginCmp
+TimeStamp = /52456623;
+Reference = P2;
+ValeurCmp = CONN_2;
+IdModule  = bornier2;
+EndCmp
+
+BeginCmp
+TimeStamp = /52456680;
+Reference = P3;
+ValeurCmp = CONN_2;
+IdModule  = bornier2;
+EndCmp
+
+BeginCmp
+TimeStamp = /5245666F;
+Reference = P4;
+ValeurCmp = CONN_2;
+IdModule  = bornier2;
+EndCmp
+
+BeginCmp
+TimeStamp = /52456698;
+Reference = P5;
+ValeurCmp = CONN_2;
+IdModule  = bornier2;
+EndCmp
+
+BeginCmp
+TimeStamp = /52456687;
+Reference = P6;
+ValeurCmp = CONN_2;
+IdModule  = bornier2;
+EndCmp
+
+BeginCmp
+TimeStamp = /52456924;
+Reference = P7;
+ValeurCmp = CONN_2;
+IdModule  = bornier2;
+EndCmp
+
+BeginCmp
+TimeStamp = /52456FB0;
+Reference = R1;
+ValeurCmp = 10k;
+IdModule  = SM0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /52456217;
+Reference = U1;
+ValeurCmp = TS5A3154;
+IdModule  = VSSOP;
+EndCmp
+
+BeginCmp
+TimeStamp = /5245622F;
+Reference = U2;
+ValeurCmp = TS5A3154;
+IdModule  = VSSOP;
+EndCmp
+
+BeginCmp
+TimeStamp = /52456622;
+Reference = U3;
+ValeurCmp = TS5A3154;
+IdModule  = VSSOP;
+EndCmp
+
+BeginCmp
+TimeStamp = /52456621;
+Reference = U4;
+ValeurCmp = TS5A3154;
+IdModule  = VSSOP;
+EndCmp
+
+BeginCmp
+TimeStamp = /5245667F;
+Reference = U5;
+ValeurCmp = TS5A3154;
+IdModule  = VSSOP;
+EndCmp
+
+BeginCmp
+TimeStamp = /5245667E;
+Reference = U6;
+ValeurCmp = TS5A3154;
+IdModule  = VSSOP;
+EndCmp
+
+BeginCmp
+TimeStamp = /52456670;
+Reference = U7;
+ValeurCmp = TS5A3154;
+IdModule  = VSSOP;
+EndCmp
+
+BeginCmp
+TimeStamp = /52456671;
+Reference = U8;
+ValeurCmp = TS5A3154;
+IdModule  = VSSOP;
+EndCmp
+
+BeginCmp
+TimeStamp = /52456697;
+Reference = U9;
+ValeurCmp = TS5A3154;
+IdModule  = VSSOP;
+EndCmp
+
+BeginCmp
+TimeStamp = /52456696;
+Reference = U10;
+ValeurCmp = TS5A3154;
+IdModule  = VSSOP;
+EndCmp
+
+BeginCmp
+TimeStamp = /52456688;
+Reference = U11;
+ValeurCmp = TS5A3154;
+IdModule  = VSSOP;
+EndCmp
+
+BeginCmp
+TimeStamp = /52456689;
+Reference = U12;
+ValeurCmp = TS5A3154;
+IdModule  = VSSOP;
+EndCmp
+
+BeginCmp
+TimeStamp = /52456936;
+Reference = U13;
+ValeurCmp = 74HC4051;
+IdModule  = SO16N;
+EndCmp
+
+BeginCmp
+TimeStamp = /524569E7;
+Reference = U14;
+ValeurCmp = 74HC4051;
+IdModule  = SO16N;
+EndCmp
+
+BeginCmp
+TimeStamp = /52456F27;
+Reference = X1;
+ValeurCmp = 20mhz;
+IdModule  = HC-49V;
+EndCmp
+
+EndListe

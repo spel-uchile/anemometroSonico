@@ -1,0 +1,311 @@
+# EESchema Netlist Version 1.1 created  Thu Oct  3 10:43:18 2013
+(
+ ( /52457000 SM1206 C1 0.1u
+  ( 1 +5V )
+  ( 2 GND )
+ )
+ ( /52456DF2 SM1206 C2 0.1u
+  ( 1 N-000030 )
+  ( 2 GND )
+ )
+ ( /52456F3B SM0805 C3 22p
+  ( 1 N-000040 )
+  ( 2 GND )
+ )
+ ( /52456F35 SM0805 C4 22p
+  ( 1 N-000035 )
+  ( 2 GND )
+ )
+ ( /524D49DC SM1206 C5 0.1u
+  ( 1 +5V )
+  ( 2 GND )
+ )
+ ( /524D49E0 SM1206 C6 0.1u
+  ( 1 +5V )
+  ( 2 GND )
+ )
+ ( /52456E5C PIN_ARRAY_5x2 CON1 AVR-ISP-10
+  ( 1 N-000037 )
+  ( 2 +5V )
+  ( 3 ? )
+  ( 4 GND )
+  ( 5 N-000045 )
+  ( 6 GND )
+  ( 7 N-000032 )
+  ( 8 GND )
+  ( 9 N-000033 )
+  ( 10 GND )
+ )
+ ( /52456DAF TQFP32 IC1 ATMEGA328P-A
+  ( 1 /PULSE+ )
+  ( 2 /PULSE- )
+  ( 3 GND )
+  ( 4 +5V )
+  ( 5 GND )
+  ( 6 +5V )
+  ( 7 N-000035 )
+  ( 8 N-000040 )
+  ( 9 ? )
+  ( 10 ? )
+  ( 11 ? )
+  ( 12 /ADC_SELECT0 )
+  ( 13 /ADC_SELECT1 )
+  ( 14 /ADC_SELECT2 )
+  ( 15 N-000037 )
+  ( 16 N-000033 )
+  ( 17 N-000032 )
+  ( 18 +5V )
+  ( 19 ? )
+  ( 20 N-000030 )
+  ( 21 GND )
+  ( 22 ? )
+  ( 23 /ENABLE_NORTH )
+  ( 24 /ENABLE_SOUTH )
+  ( 25 /ENABLE_EAST )
+  ( 26 /ENABLE_WEST )
+  ( 27 /ENABLE_TOP )
+  ( 28 /ENABLE_BOTTOM )
+  ( 29 N-000045 )
+  ( 30 ? )
+  ( 31 ? )
+  ( 32 N-000031 )
+ )
+ ( /52457413 bornier3 K1 CONN_3
+  ( 1 +5V )
+  ( 2 N-000031 )
+  ( 3 GND )
+ )
+ ( /524561A5 bornier2 P1 CONN_2
+  ( 1 /NORTH- )
+  ( 2 /NORTH+ )
+ )
+ ( /52456623 bornier2 P2 CONN_2
+  ( 1 /SOUTH- )
+  ( 2 /SOUTH+ )
+ )
+ ( /52456680 bornier2 P3 CONN_2
+  ( 1 /EAST- )
+  ( 2 /EAST+ )
+ )
+ ( /5245666F bornier2 P4 CONN_2
+  ( 1 /WEST- )
+  ( 2 /WEST+ )
+ )
+ ( /52456698 bornier2 P5 CONN_2
+  ( 1 /TOP- )
+  ( 2 /TOP+ )
+ )
+ ( /52456687 bornier2 P6 CONN_2
+  ( 1 /BOTTOM- )
+  ( 2 /BOTTOM+ )
+ )
+ ( /52456924 bornier2 P7 CONN_2
+  ( 1 N-000029 )
+  ( 2 N-000025 )
+ )
+ ( /52456FB0 SM0805 R1 10k
+  ( 1 +5V )
+  ( 2 N-000045 )
+ )
+ ( /52456217 VSSOP U1 TS5A3154
+  ( 1 /NORTH+ )
+  ( 2 /ENABLE_NORTH )
+  ( 3 GND )
+  ( 4 GND )
+  ( 5 /PULSE+ )
+  ( 6 GND )
+  ( 7 +5V )
+  ( 8 +5V )
+ )
+ ( /5245622F VSSOP U2 TS5A3154
+  ( 1 /NORTH- )
+  ( 2 /ENABLE_NORTH )
+  ( 3 GND )
+  ( 4 GND )
+  ( 5 /PULSE- )
+  ( 6 GND )
+  ( 7 +5V )
+  ( 8 +5V )
+ )
+ ( /52456622 VSSOP U3 TS5A3154
+  ( 1 /SOUTH+ )
+  ( 2 /ENABLE_SOUTH )
+  ( 3 GND )
+  ( 4 GND )
+  ( 5 /PULSE+ )
+  ( 6 GND )
+  ( 7 +5V )
+  ( 8 +5V )
+ )
+ ( /52456621 VSSOP U4 TS5A3154
+  ( 1 /SOUTH- )
+  ( 2 /ENABLE_SOUTH )
+  ( 3 GND )
+  ( 4 GND )
+  ( 5 /PULSE- )
+  ( 6 GND )
+  ( 7 +5V )
+  ( 8 +5V )
+ )
+ ( /5245667F VSSOP U5 TS5A3154
+  ( 1 /EAST+ )
+  ( 2 /ENABLE_EAST )
+  ( 3 GND )
+  ( 4 GND )
+  ( 5 /PULSE+ )
+  ( 6 GND )
+  ( 7 +5V )
+  ( 8 +5V )
+ )
+ ( /5245667E VSSOP U6 TS5A3154
+  ( 1 /EAST- )
+  ( 2 /ENABLE_EAST )
+  ( 3 GND )
+  ( 4 GND )
+  ( 5 /PULSE- )
+  ( 6 GND )
+  ( 7 +5V )
+  ( 8 +5V )
+ )
+ ( /52456670 VSSOP U7 TS5A3154
+  ( 1 /WEST+ )
+  ( 2 /ENABLE_WEST )
+  ( 3 GND )
+  ( 4 GND )
+  ( 5 /PULSE+ )
+  ( 6 GND )
+  ( 7 +5V )
+  ( 8 +5V )
+ )
+ ( /52456671 VSSOP U8 TS5A3154
+  ( 1 /WEST- )
+  ( 2 /ENABLE_WEST )
+  ( 3 GND )
+  ( 4 GND )
+  ( 5 /PULSE- )
+  ( 6 GND )
+  ( 7 +5V )
+  ( 8 +5V )
+ )
+ ( /52456697 VSSOP U9 TS5A3154
+  ( 1 /TOP+ )
+  ( 2 /ENABLE_TOP )
+  ( 3 GND )
+  ( 4 GND )
+  ( 5 /PULSE+ )
+  ( 6 GND )
+  ( 7 +5V )
+  ( 8 +5V )
+ )
+ ( /52456696 VSSOP U10 TS5A3154
+  ( 1 /TOP- )
+  ( 2 /ENABLE_TOP )
+  ( 3 GND )
+  ( 4 GND )
+  ( 5 /PULSE- )
+  ( 6 GND )
+  ( 7 +5V )
+  ( 8 +5V )
+ )
+ ( /52456688 VSSOP U11 TS5A3154
+  ( 1 /BOTTOM+ )
+  ( 2 /ENABLE_BOTTOM )
+  ( 3 GND )
+  ( 4 GND )
+  ( 5 /PULSE+ )
+  ( 6 GND )
+  ( 7 +5V )
+  ( 8 +5V )
+ )
+ ( /52456689 VSSOP U12 TS5A3154
+  ( 1 /BOTTOM- )
+  ( 2 /ENABLE_BOTTOM )
+  ( 3 GND )
+  ( 4 GND )
+  ( 5 /PULSE- )
+  ( 6 GND )
+  ( 7 +5V )
+  ( 8 +5V )
+ )
+ ( /52456936 SO16N U13 74HC4051
+  ( 1 /TOP+ )
+  ( 2 /PULSE+ )
+  ( 3 N-000025 )
+  ( 4 ? )
+  ( 5 /BOTTOM+ )
+  ( 6 GND )
+  ( 7 GND )
+  ( 8 GND )
+  ( 9 /ADC_SELECT2 )
+  ( 10 /ADC_SELECT1 )
+  ( 11 /ADC_SELECT0 )
+  ( 12 /WEST+ )
+  ( 13 /NORTH+ )
+  ( 14 /SOUTH+ )
+  ( 15 /EAST+ )
+  ( 16 +5V )
+ )
+ ( /524569E7 SO16N U14 74HC4051
+  ( 1 /TOP- )
+  ( 2 /PULSE- )
+  ( 3 N-000029 )
+  ( 4 ? )
+  ( 5 /BOTTOM- )
+  ( 6 GND )
+  ( 7 GND )
+  ( 8 GND )
+  ( 9 /ADC_SELECT2 )
+  ( 10 /ADC_SELECT1 )
+  ( 11 /ADC_SELECT0 )
+  ( 12 /WEST- )
+  ( 13 /NORTH- )
+  ( 14 /SOUTH- )
+  ( 15 /EAST- )
+  ( 16 +5V )
+ )
+ ( /52456F27 HC-49V X1 20mhz
+  ( 1 N-000040 )
+  ( 2 N-000035 )
+ )
+)
+*
+{ Allowed footprints by component:
+$component C1
+ SM*
+ C?
+ C1-1
+$endlist
+$component C2
+ SM*
+ C?
+ C1-1
+$endlist
+$component C3
+ SM*
+ C?
+ C1-1
+$endlist
+$component C4
+ SM*
+ C?
+ C1-1
+$endlist
+$component C5
+ SM*
+ C?
+ C1-1
+$endlist
+$component C6
+ SM*
+ C?
+ C1-1
+$endlist
+$component R1
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$endfootprintlist
+}
