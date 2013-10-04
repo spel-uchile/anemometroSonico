@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Thu Oct  3 10:55:26 2013
+EESchema Schematic File Version 2  date Fri Oct  4 19:56:01 2013
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -38,7 +38,7 @@ $Descr A3 16535 11700
 encoding utf-8
 Sheet 1 1
 Title ""
-Date "3 oct 2013"
+Date "4 oct 2013"
 Rev ""
 Comp ""
 Comment1 ""
@@ -452,9 +452,9 @@ Text Label 7950 5150 0    60   ~ 0
 ENABLE_SOUTH
 Text Label 7950 5050 0    60   ~ 0
 ENABLE_NORTH
-Text Label 7950 6200 0    60   ~ 0
-PULSE-
 Text Label 7950 6100 0    60   ~ 0
+PULSE-
+Text Label 7950 6200 0    60   ~ 0
 PULSE+
 $Comp
 L C C1
