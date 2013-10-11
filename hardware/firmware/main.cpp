@@ -38,7 +38,8 @@
  * PB1 => ADC select 1
  * PB2 => ADC select 2
  * PD2 => chip select
- * PD3 => pulse+ signal
+ * PD3 => pulse- signal
+ * PD4 => pulse+ signal
  */
 
 /* System State Machine.
@@ -77,7 +78,7 @@ void start_pulses(uint8_t pulses) {
     TCCR1B |= (1<<CS10); // no preescaling
     TIMSK1 |= 1<<OCIE1A; // interrupt on match
     OCR1A = 313;
-    remain_pulses = pulses;
+    remain_pulses = 2*pulses;
     PORTD |= 1<<PD3;
   }
 }
@@ -102,16 +103,12 @@ ISR (INT0_vect)
 
 // pulse generation interrupt.
 ISR(TIMER1_COMPA_vect) {
-  if (PORTD & (1<<PD3)) {
-    PORTD &= ~(1<<PD3);
-  } else {
-    if (--remain_pulses) {
-      PORTD |= 1<<PD3;
-    } else {
-      TCCR1B &= ~(1<<CS10);
-      TIMSK1 &= ~(1<<OCIE1A);
-      generating_pulses = false;
-    }
+  PORTD ^=  (1<<PD3) | (1<<PD4);
+  if (--remain_pulses == 0) {
+    PORTD &= ~((1<<PD3) | (1<<PD4));
+    TCCR1B &= ~(1<<CS10);
+    TIMSK1 &= ~(1<<OCIE1A);
+    generating_pulses = false;
   }
   OCR1A += 314;
 }
@@ -130,7 +127,7 @@ ISR(TIMER0_COMPA_vect) {
     PORTB = 0x00;
     PORTC = 0x10;
     start_pulses(6);
-    setup_timer(70, LISTEN_SOUTH);
+    setup_timer(140, LISTEN_SOUTH);
     break;
   case LISTEN_SOUTH:
     PORTB = 0x01;
@@ -146,8 +143,8 @@ int main() {
   PORTB = 0x00;
   DDRC = 0xFF;
   PORTC = 0x00;
-  DDRD |= 1<<PD3;
-  PORTD &= ~(1<<PD3);
+  DDRD |= (1<<PD3) | (1<<PD4);
+  PORTD &= ~((1<<PD3) | (1<<PD4));
 
   // Set up interruption on falling edge of chip_select
   DDRD &= ~(1 << DDD2); // Set PD2 as input
