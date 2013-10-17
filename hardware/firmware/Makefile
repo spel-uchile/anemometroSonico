@@ -97,6 +97,10 @@ LIBS=
 # use s (size opt), 1, 2, 3 or 0 (off)
 OPTLEVEL=0
 
+LFUSE=0xff
+HFUSE=0xdf
+EFUSE=0x07
+
 
 #####      AVR Dude 'writeflash' options       #####
 #####  If you are using the avrdude program
@@ -112,8 +116,8 @@ OPTLEVEL=0
 # one of the valid "-c PROGRAMMER-ID" values 
 # described in the avrdude info page.
 # 
-AVRDUDE_PROGRAMMERID=arduino
-AVRDUDE_BAUDRATE=57600
+AVRDUDE_PROGRAMMERID=stk500v1
+AVRDUDE_BAUDRATE=19200
 
 # port--serial or parallel port to which your 
 # hardware programmer is attached
@@ -225,6 +229,12 @@ stats: $(TRG)
 
 hex: $(HEXTRG)
 
+
+writefuses:
+	$(AVRDUDE) -c $(AVRDUDE_PROGRAMMERID) -b$(AVRDUDE_BAUDRATE)  \
+	 -p $(PROGRAMMER_MCU) -P $(AVRDUDE_PORT) -e        \
+	 -U lfuse:w:$(LFUSE):m -U hfuse:w:$(HFUSE):m \
+	 -U efuse:w:$(EFUSE):m
 
 writeflash: hex
 	$(AVRDUDE) -c $(AVRDUDE_PROGRAMMERID) -b$(AVRDUDE_BAUDRATE)  \
