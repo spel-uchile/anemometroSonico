@@ -50,7 +50,10 @@
 typedef enum {
   IDLE,
   DRIVE_NORTH,
-  LISTEN_SOUTH
+  LISTEN_SOUTH,
+  TRANSITION_NORTH_TO_SOUTH,
+  DRIVE_SOUTH,
+  LISTEN_NORTH
 } state_t;
 // FSM current state.
 state_t state_;
@@ -89,7 +92,7 @@ void setup_timer(uint8_t ticks, state_t next_state) {
     timer0_running_ = true;
     next_state_ = next_state;
     TCNT0 = 0;
-    TCCR0B |= (1<<CS01) | (1<<CS00); //64 preescaling
+    TCCR0B |= (1<<CS02) | (1<<CS00); //1024 preescaling
     TIMSK0 |= 1<<OCIE0A;
     OCR0A = ticks;
   }
@@ -98,7 +101,7 @@ void setup_timer(uint8_t ticks, state_t next_state) {
 ISR (INT0_vect)
 {
   // The first event is delayed so the ADC is already taking samples.
-  setup_timer(125, DRIVE_NORTH);
+  setup_timer(20, DRIVE_NORTH);
 }
 
 // pulse generation interrupt.
@@ -122,17 +125,35 @@ ISR(TIMER0_COMPA_vect) {
   state_ = next_state_;
   switch (state_) {
   case IDLE:
+    PORTB = 0x06; // Pulse -> ADC
+    PORTC = 0x00;
     break;
   case DRIVE_NORTH:
-    PORTB = 0x00; // North -> ADC
+    PORTB = 0x06; // Pulse -> ADC
     PORTC = 0xFE; // Enable North
     start_pulses(6);
-    setup_timer(140, LISTEN_SOUTH);
+    setup_timer(6, LISTEN_SOUTH);
     break;
   case LISTEN_SOUTH:
     PORTB = 0x01; // South -> ADC
     PORTC = 0xFF; // Disable All
-    setup_timer(125, IDLE);
+    setup_timer(100, TRANSITION_NORTH_TO_SOUTH);
+    break;
+  case TRANSITION_NORTH_TO_SOUTH:
+    PORTB = 0x06; // Pulse -> ADC
+    PORTC = 0x00;
+    setup_timer(10, DRIVE_SOUTH);
+    break;
+  case DRIVE_SOUTH:
+    PORTB = 0x06; // Pulse -> ADC
+    PORTC = 0xFD; // Enable South
+    start_pulses(6);
+    setup_timer(6, LISTEN_NORTH);
+    break;
+  case LISTEN_NORTH:
+    PORTB = 0x00; // North -> ADC
+    PORTC = 0xFF; // Disable All
+    setup_timer(100, IDLE);
     break;
   }
 }
@@ -140,7 +161,7 @@ ISR(TIMER0_COMPA_vect) {
 int main() {
   // I/O set up
   DDRB = 0xFF;
-  PORTB = 0x00;
+  PORTB = 0x06; // Pulse -> ADC
   DDRC = 0xFF;
   PORTC = 0x00;
   DDRD |= (1<<PD3) | (1<<PD4);

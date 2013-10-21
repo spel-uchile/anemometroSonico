@@ -116,13 +116,13 @@ EFUSE=0x07
 # one of the valid "-c PROGRAMMER-ID" values 
 # described in the avrdude info page.
 # 
-AVRDUDE_PROGRAMMERID=stk500v1
+AVRDUDE_PROGRAMMERID=stk500v2
 AVRDUDE_BAUDRATE=19200
 
 # port--serial or parallel port to which your 
 # hardware programmer is attached
 #
-AVRDUDE_PORT=/dev/ttyUSB0
+AVRDUDE_PORT=/dev/ttyACM0
 
 
 ####################################################
