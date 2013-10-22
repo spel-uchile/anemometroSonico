@@ -131,8 +131,8 @@ ISR(TIMER0_COMPA_vect) {
   case DRIVE_NORTH:
     PORTB = 0x06; // Pulse -> ADC
     PORTC = 0xFE; // Enable North
-    start_pulses(6);
-    setup_timer(6, LISTEN_SOUTH);
+    start_pulses(3);
+    setup_timer(3, LISTEN_SOUTH);
     break;
   case LISTEN_SOUTH:
     PORTB = 0x01; // South -> ADC
@@ -147,8 +147,8 @@ ISR(TIMER0_COMPA_vect) {
   case DRIVE_SOUTH:
     PORTB = 0x06; // Pulse -> ADC
     PORTC = 0xFD; // Enable South
-    start_pulses(6);
-    setup_timer(6, LISTEN_NORTH);
+    start_pulses(3);
+    setup_timer(3, LISTEN_NORTH);
     break;
   case LISTEN_NORTH:
     PORTB = 0x00; // North -> ADC
