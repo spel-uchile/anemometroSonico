@@ -1,5 +1,5 @@
-update=Wed Aug  7 22:55:02 2013
-last_client=pcbnew
+update=Fri Oct  4 20:24:03 2013
+last_client=kicad
 [eeschema]
 version=1
 LibDir=../libs
@@ -104,3 +104,5 @@ LibName10=pga_sockets
 LibName11=valves
 LibName12=LQFP64
 LibName13=open-project
+[general]
+version=1

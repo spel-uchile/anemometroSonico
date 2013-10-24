@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2012-apr-16-27)-stable date = Mon Aug 26 18:29:55 2013
+Cmp-Mod V01 Created by CvPcb (2012-apr-16-27)-stable date = Fri Oct  4 20:12:12 2013
 
 BeginCmp
 TimeStamp = /5201B04C;
@@ -134,6 +134,13 @@ IdModule  = SM1206;
 EndCmp
 
 BeginCmp
+TimeStamp = /524ED382;
+Reference = K1;
+ValeurCmp = CONN_3;
+IdModule  = bornier3;
+EndCmp
+
+BeginCmp
 TimeStamp = /5201AF84;
 Reference = L1;
 ValeurCmp = INDUCTOR;
@@ -155,10 +162,10 @@ IdModule  = bornier2;
 EndCmp
 
 BeginCmp
-TimeStamp = /521BD67C;
+TimeStamp = /524F20B5;
 Reference = P2;
-ValeurCmp = CONN_1;
-IdModule  = 1pin;
+ValeurCmp = CONN_2;
+IdModule  = bornier2;
 EndCmp
 
 BeginCmp
