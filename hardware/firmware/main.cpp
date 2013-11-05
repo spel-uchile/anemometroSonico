@@ -1,6 +1,4 @@
 /*
- * This file is part of the Ckelinar Project.
- *
  * Copyright (C) 2013  UNIVERSIDAD DE CHILE.
  *
  * This program is free software: you can redistribute it and/or modify
@@ -32,6 +30,7 @@
 #include <avr/io.h>
 #include <avr/interrupt.h>
 #include <avr/sleep.h>
+#include "pulse_generation.h"
 
 /* Pin allocation
  * PB0 => ADC select 0
@@ -64,28 +63,6 @@ state_t next_state_;
 bool timer0_running_ = false;
 
 
-/* Pulse generation uses the COUNTER1, TIMER1 COMPARATOR A, and the folling
- * variables.
- */
-// if we are generating pulses or not
-bool generating_pulses = false;
-// number of pulses remaining to be generated
-uint8_t remain_pulses;
- 
-// Generate a fixed amount of pulses asyncronously.
-// TODO: the first pulse is few micro-seconds larger than the rest
-void start_pulses(uint8_t pulses) {
-  if (!generating_pulses) {
-    generating_pulses = true;
-    TCNT1 = 0;
-    TCCR1B |= (1<<CS10); // no preescaling
-    TIMSK1 |= 1<<OCIE1A; // interrupt on match
-    OCR1A = 400;
-    remain_pulses = 2*pulses;
-    PORTD &= ~(1<<PD3);
-  }
-}
-
 // schedule to evaluate the event next_state in ticks ticks.
 void setup_timer(uint8_t ticks, state_t next_state) {
   if (!timer0_running_) {
@@ -104,17 +81,7 @@ ISR (INT0_vect)
   setup_timer(20, DRIVE_NORTH);
 }
 
-// pulse generation interrupt.
-ISR(TIMER1_COMPA_vect) {
-  PORTD ^=  (1<<PD3) | (1<<PD4);
-  if (--remain_pulses == 0) {
-    PORTD |= (1<<PD3) | (1<<PD4);
-    TCCR1B &= ~(1<<CS10);
-    TIMSK1 &= ~(1<<OCIE1A);
-    generating_pulses = false;
-  }
-  OCR1A += 400;
-}
+
 
 
 
