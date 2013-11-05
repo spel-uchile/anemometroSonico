@@ -22,31 +22,53 @@
 #include <avr/io.h>
 #include <avr/interrupt.h>
 
-bool generating_pulses = false;
+#define PULSE_HALF_WIDTH 400
+#define DISABLE_ALL 0xFF
+
+/* Pulse generation uses the COUNTER1, TIMER1 COMPARATOR A, and the folling
+ * variables.
+ */
+// if we are generating pulses or not
+bool generating_pulses;
+// number of pulses remaining to be generated
 uint8_t remain_pulses;
 
+uint8_t next_portd;
+uint8_t next_enable;
 
-void start_pulses(uint8_t pulses) {
+
+
+void start_pulses(uint8_t pulses, uint8_t enable_mask) {
   if (!generating_pulses) {
     generating_pulses = true;
     TCNT1 = 0;
     TCCR1B |= (1<<CS10); // no preescaling
-    TIMSK1 |= 1<<OCIE1A; // interrupt on match
-    OCR1A = 400;
+    TIMSK1 |= (1<<OCIE1A) | (1<<OCIE1B); // interrupt on match A and B
+    OCR1A = PULSE_HALF_WIDTH;
+    OCR1B = pulses*2*PULSE_HALF_WIDTH - PULSE_HALF_WIDTH/2;
+
+    next_enable = enable_mask;
     remain_pulses = 2*pulses;
-    PORTD &= ~(1<<PD3);
+
+    PORTC = next_enable;
+    PIND = (1<<PD3) | (1<<PD4); // flip PD3 y PD4
   }
 }
 
 
 // pulse generation interrupt.
 ISR(TIMER1_COMPA_vect) {
-  PORTD ^=  (1<<PD3) | (1<<PD4);
+  PORTC = next_enable;
+  PIND = (1<<PD3) | (1<<PD4); // flip PD3 y PD4
   if (--remain_pulses == 0) {
-    PORTD |= (1<<PD3) | (1<<PD4);
     TCCR1B &= ~(1<<CS10);
     TIMSK1 &= ~(1<<OCIE1A);
+    TIMSK1 &= ~(1<<OCIE1B);
     generating_pulses = false;
   }
-  OCR1A += 400;
+  OCR1A += PULSE_HALF_WIDTH;
+}
+
+ISR(TIMER1_COMPB_vect) {
+  next_enable = DISABLE_ALL;
 }

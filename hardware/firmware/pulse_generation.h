@@ -22,16 +22,8 @@
 
 #include <stdint.h>
 
-/* Pulse generation uses the COUNTER1, TIMER1 COMPARATOR A, and the folling
- * variables.
- */
-// if we are generating pulses or not
-extern bool generating_pulses;
-// number of pulses remaining to be generated
-extern uint8_t remain_pulses;
-
 // Generate a fixed amount of pulses asyncronously.
 // TODO: the first pulse is few micro-seconds larger than the rest
-void start_pulses(uint8_t pulses);
+void start_pulses(uint8_t pulses, uint8_t enable_mask);
 
 #endif // PULSE_GENERATION_H

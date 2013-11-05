@@ -93,12 +93,11 @@ ISR(TIMER0_COMPA_vect) {
   switch (state_) {
   case IDLE:
     PORTB = 0x06; // Pulse -> ADC
-    PORTC = 0x00;
+    PORTC = 0xFF; // Disable All
     break;
   case DRIVE_NORTH:
     PORTB = 0x06; // Pulse -> ADC
-    PORTC = 0xFE; // Enable North
-    start_pulses(3);
+    start_pulses(3, 0xFE);
     setup_timer(3, LISTEN_SOUTH);
     break;
   case LISTEN_SOUTH:
@@ -108,13 +107,12 @@ ISR(TIMER0_COMPA_vect) {
     break;
   case TRANSITION_NORTH_TO_SOUTH:
     PORTB = 0x06; // Pulse -> ADC
-    PORTC = 0x00;
+    PORTC = 0xFF; // Disable All
     setup_timer(10, DRIVE_SOUTH);
     break;
   case DRIVE_SOUTH:
     PORTB = 0x06; // Pulse -> ADC
-    PORTC = 0xFD; // Enable South
-    start_pulses(3);
+    start_pulses(3, 0xFD);
     setup_timer(3, LISTEN_NORTH);
     break;
   case LISTEN_NORTH:
@@ -132,7 +130,7 @@ int main() {
   DDRC = 0xFF;
   PORTC = 0x00;
   DDRD |= (1<<PD3) | (1<<PD4);
-  PORTD |= (1<<PD3) | (1<<PD4);
+  PORTD |= (1<<PD3);
 
   // Set up interruption on falling edge of chip_select
   DDRD &= ~(1 << DDD2); // Set PD2 as input
