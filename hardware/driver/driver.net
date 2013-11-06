@@ -1,308 +1,745 @@
-# EESchema Netlist Version 1.1 created  Fri Oct  4 19:03:55 2013
+# EESchema Netlist Version 1.1 created  Wed Nov  6 17:07:45 2013
 (
- ( /524D49E0 $noname  C6 0.1u {Lib=C}
+ ( /527A66F3 $noname  C109 0.1u {Lib=C}
+  (    1 N-000053 )
+  (    2 N-000054 )
+ )
+ ( /527A669C $noname  P103 CONN_6 {Lib=CONN_6}
+  (    1 N-000054 )
+  (    2 N-000051 )
+  (    3 N-000058 )
+  (    4 +5V )
+  (    5 GND )
+  (    6 GND )
+ )
+ ( /527A577D $noname  R105 10k {Lib=R}
+  (    1 +5V )
+  (    2 N-000050 )
+ )
+ ( /527A577A $noname  R104 10k {Lib=R}
+  (    1 +12V )
+  (    2 N-000049 )
+ )
+ ( /527A5761 $noname  D102 LED {Lib=LED}
+  (    1 N-000050 )
+  (    2 GND )
+ )
+ ( /527A5758 $noname  D101 LED {Lib=LED}
+  (    1 N-000049 )
+  (    2 GND )
+ )
+ ( /527A566E $noname  P102 CONN_2 {Lib=CONN_2}
+  (    1 N-000036 )
+  (    2 GND )
+ )
+ ( /527A55D2 $noname  C110 10u {Lib=C}
+  (    1 +12V )
+  (    2 GND )
+ )
+ ( /527A55D1 $noname  C111 1u {Lib=C}
+  (    1 +12V )
+  (    2 GND )
+ )
+ ( /527A559F $noname  C113 1u {Lib=C}
   (    1 +5V )
   (    2 GND )
  )
- ( /524D49DC $noname  C5 0.1u {Lib=C}
+ ( /527A559E $noname  C112 10u {Lib=C}
   (    1 +5V )
   (    2 GND )
  )
- ( /52457413 $noname  K1 CONN_3 {Lib=CONN_3}
-  (    1 +5V )
-  (    2 N-000031 )
+ ( /527A5450 $noname  K101 CONN_3 {Lib=CONN_3}
+  (    1 +12V )
+  (    2 +5V )
   (    3 GND )
  )
- ( /52457000 $noname  C1 0.1u {Lib=C}
+ ( /527A4F75 $noname  C101 0.1u {Lib=C}
+  (    1 +12V )
+  (    2 GND )
+ )
+ ( /527A4F74 $noname  C102 1u {Lib=C}
+  (    1 +12V )
+  (    2 GND )
+ )
+ ( /527A4A61 MODULE  U102 ADG5207 {Lib=ADG5207}
+  (    1 +12V )
+  (    2 N-000041 )
+  (    3 ? )
+  (    4 ? )
+  (    5 /PULSE- )
+  (    6 /top_bottom/B- )
+  (    7 /top_bottom/A- )
+  (    8 /east_west/B- )
+  (    9 /east_west/A- )
+  (   10 /north_south/B- )
+  (   11 /north_south/A- )
+  (   12 GND )
+  (   13 ? )
+  (   14 ? )
+  (   15 /ADC_SELECT2 )
+  (   16 /ADC_SELECT1 )
+  (   17 /ADC_SELECT0 )
+  (   18 +5V )
+  (   19 /north_south/A+ )
+  (   20 /north_south/B+ )
+  (   21 /east_west/A+ )
+  (   22 /east_west/B+ )
+  (   23 /top_bottom/A+ )
+  (   24 /top_bottom/B+ )
+  (   25 /PULSE+ )
+  (   26 ? )
+  (   27 GND )
+  (   28 N-000019 )
+ )
+ ( /527A41B5 $noname  R102 R {Lib=R}
+  (    1 N-000024 )
+  (    2 GND )
+ )
+ ( /527A41AA $noname  R101 1k {Lib=R}
+  (    1 +12V )
+  (    2 N-000024 )
+ )
+ ( /527A4177 MODULE  U101 LT1010 {Lib=LT1010}
+  (    1 +12V )
+  (    2 ? )
+  (    3 VCC_HALF )
+  (    4 ? )
+  (    5 ? )
+  (    6 GND )
+  (    7 ? )
+  (    8 N-000024 )
+ )
+ ( /524D49E0 $noname  C107 1u {Lib=C}
+  (    1 +12V )
+  (    2 GND )
+ )
+ ( /524D49DC $noname  C106 0.1u {Lib=C}
+  (    1 +12V )
+  (    2 GND )
+ )
+ ( /52457000 $noname  C103 0.1u {Lib=C}
   (    1 +5V )
   (    2 GND )
  )
- ( /52456FB0 $noname  R1 10k {Lib=R}
+ ( /52456FB0 $noname  R103 10k {Lib=R}
   (    1 +5V )
+  (    2 N-000053 )
+ )
+ ( /52456F3B $noname  C105 22p {Lib=C}
+  (    1 N-000046 )
+  (    2 GND )
+ )
+ ( /52456F35 $noname  C108 22p {Lib=C}
+  (    1 N-000045 )
+  (    2 GND )
+ )
+ ( /52456F27 $noname  X101 20mhz {Lib=CRYSTAL}
+  (    1 N-000046 )
   (    2 N-000045 )
  )
- ( /52456F3B $noname  C3 22p {Lib=C}
-  (    1 N-000040 )
-  (    2 GND )
- )
- ( /52456F35 $noname  C4 22p {Lib=C}
-  (    1 N-000035 )
-  (    2 GND )
- )
- ( /52456F27 $noname  X1 20mhz {Lib=CRYSTAL}
-  (    1 N-000040 )
-  (    2 N-000035 )
- )
- ( /52456E5C AVR-ISP-10  CON1 AVR-ISP-10 {Lib=AVR-ISP-10}
-  (    1 N-000037 )
+ ( /52456E5C AVR-ISP-10  CON101 AVR-ISP-10 {Lib=AVR-ISP-10}
+  (    1 N-000052 )
   (    2 +5V )
   (    3 ? )
   (    4 GND )
-  (    5 N-000045 )
+  (    5 N-000053 )
   (    6 GND )
   (    7 N-000032 )
   (    8 GND )
   (    9 N-000033 )
   (   10 GND )
  )
- ( /52456DF2 $noname  C2 0.1u {Lib=C}
-  (    1 N-000030 )
+ ( /52456DF2 $noname  C104 0.1u {Lib=C}
+  (    1 N-000048 )
   (    2 GND )
  )
- ( /52456DAF TQFP32  IC1 ATMEGA328P-A {Lib=ATMEGA328P-A}
+ ( /52456DAF TQFP32  IC101 ATMEGA328P-A {Lib=ATMEGA328P-A}
   (    1 /PULSE- )
   (    2 /PULSE+ )
   (    3 GND )
   (    4 +5V )
   (    5 GND )
   (    6 +5V )
-  (    7 N-000035 )
-  (    8 N-000040 )
+  (    7 N-000045 )
+  (    8 N-000046 )
   (    9 ? )
   (   10 ? )
   (   11 ? )
   (   12 /ADC_SELECT0 )
   (   13 /ADC_SELECT1 )
   (   14 /ADC_SELECT2 )
-  (   15 N-000037 )
+  (   15 N-000052 )
   (   16 N-000033 )
   (   17 N-000032 )
   (   18 +5V )
   (   19 ? )
-  (   20 N-000030 )
+  (   20 N-000048 )
   (   21 GND )
   (   22 ? )
-  (   23 /ENABLE_NORTH )
-  (   24 /ENABLE_SOUTH )
-  (   25 /ENABLE_EAST )
-  (   26 /ENABLE_WEST )
-  (   27 /ENABLE_TOP )
-  (   28 /ENABLE_BOTTOM )
-  (   29 N-000045 )
-  (   30 ? )
-  (   31 ? )
-  (   32 N-000031 )
+  (   23 /north_south/ENABLE_A )
+  (   24 /north_south/ENABLE_B )
+  (   25 /east_west/ENABLE_A )
+  (   26 /east_west/ENABLE_B )
+  (   27 /top_bottom/ENABLE_A )
+  (   28 /top_bottom/ENABLE_B )
+  (   29 N-000053 )
+  (   30 N-000058 )
+  (   31 N-000051 )
+  (   32 N-000036 )
  )
- ( /524569E7 MODULE  U14 74HC4051 {Lib=74HC4051}
-  (    1 /TOP- )
-  (    2 /PULSE- )
-  (    3 N-000029 )
-  (    4 ? )
-  (    5 /BOTTOM- )
-  (    6 GND )
-  (    7 GND )
-  (    8 GND )
-  (    9 /ADC_SELECT2 )
-  (   10 /ADC_SELECT1 )
-  (   11 /ADC_SELECT0 )
-  (   12 /WEST- )
-  (   13 /NORTH- )
-  (   14 /SOUTH- )
-  (   15 /EAST- )
+ ( /52456924 $noname  P101 CONN_2 {Lib=CONN_2}
+  (    1 N-000041 )
+  (    2 N-000019 )
+ )
+ ( /52783CA2/527A6473 $noname  K202 CONN_3 {Lib=CONN_3}
+  (    1 /top_bottom/B- )
+  (    2 GND )
+  (    3 /top_bottom/B+ )
+ )
+ ( /52783CA2/527A6470 $noname  K201 CONN_3 {Lib=CONN_3}
+  (    1 /top_bottom/A- )
+  (    2 GND )
+  (    3 /top_bottom/A+ )
+ )
+ ( /52783CA2/527A5050 $noname  C208 0.1u {Lib=C}
+  (    1 +5V )
+  (    2 GND )
+ )
+ ( /52783CA2/527A4FEE $noname  C203 0.1u {Lib=C}
+  (    1 VCC_HALF )
+  (    2 GND )
+ )
+ ( /52783CA2/527A4FED $noname  C204 1u {Lib=C}
+  (    1 VCC_HALF )
+  (    2 GND )
+ )
+ ( /52783CA2/527A4FAB $noname  C202 1u {Lib=C}
+  (    1 VCC_HALF )
+  (    2 GND )
+ )
+ ( /52783CA2/527A4FAA $noname  C201 0.1u {Lib=C}
+  (    1 VCC_HALF )
+  (    2 GND )
+ )
+ ( /52783CA2/527A4358 $noname  R204 10k {Lib=R}
+  (    1 /top_bottom/B- )
+  (    2 VCC_HALF )
+ )
+ ( /52783CA2/527A4353 $noname  R203 10k {Lib=R}
+  (    1 /top_bottom/B+ )
+  (    2 VCC_HALF )
+ )
+ ( /52783CA2/527A434D $noname  R202 10k {Lib=R}
+  (    1 /top_bottom/A- )
+  (    2 VCC_HALF )
+ )
+ ( /52783CA2/527A4349 $noname  R201 10k {Lib=R}
+  (    1 /top_bottom/A+ )
+  (    2 VCC_HALF )
+ )
+ ( /52783CA2/52782F07 HBridge-DIP16  IC201 SN754410 {Lib=SN754410}
+  (    1 /top_bottom/ENABLE_A )
+  (    2 PULSE+ )
+  (    3 /top_bottom/A+ )
+  (    4 GND )
+  (    5 GND )
+  (    6 /top_bottom/A- )
+  (    7 PULSE- )
+  (    8 +12V )
+  (    9 /top_bottom/ENABLE_B )
+  (   10 PULSE- )
+  (   11 /top_bottom/B- )
+  (   12 GND )
+  (   13 GND )
+  (   14 /top_bottom/B+ )
+  (   15 PULSE+ )
   (   16 +5V )
  )
- ( /52456936 MODULE  U13 74HC4051 {Lib=74HC4051}
-  (    1 /TOP+ )
-  (    2 /PULSE+ )
-  (    3 N-000025 )
-  (    4 ? )
-  (    5 /BOTTOM+ )
-  (    6 GND )
-  (    7 GND )
-  (    8 GND )
-  (    9 /ADC_SELECT2 )
-  (   10 /ADC_SELECT1 )
-  (   11 /ADC_SELECT0 )
-  (   12 /WEST+ )
-  (   13 /NORTH+ )
-  (   14 /SOUTH+ )
-  (   15 /EAST+ )
+ ( /52783CA2/52782F04 $noname  C205 10u {Lib=C}
+  (    1 +12V )
+  (    2 GND )
+ )
+ ( /52783CA2/52782F03 $noname  C206 1u {Lib=C}
+  (    1 +12V )
+  (    2 GND )
+ )
+ ( /52783CA2/52782F02 $noname  C207 0.1u {Lib=C}
+  (    1 +12V )
+  (    2 GND )
+ )
+ ( /52783C97/527A6473 $noname  K302 CONN_3 {Lib=CONN_3}
+  (    1 /east_west/B- )
+  (    2 GND )
+  (    3 /east_west/B+ )
+ )
+ ( /52783C97/527A6470 $noname  K301 CONN_3 {Lib=CONN_3}
+  (    1 /east_west/A- )
+  (    2 GND )
+  (    3 /east_west/A+ )
+ )
+ ( /52783C97/527A5050 $noname  C308 0.1u {Lib=C}
+  (    1 +5V )
+  (    2 GND )
+ )
+ ( /52783C97/527A4FEE $noname  C303 0.1u {Lib=C}
+  (    1 VCC_HALF )
+  (    2 GND )
+ )
+ ( /52783C97/527A4FED $noname  C304 1u {Lib=C}
+  (    1 VCC_HALF )
+  (    2 GND )
+ )
+ ( /52783C97/527A4FAB $noname  C302 1u {Lib=C}
+  (    1 VCC_HALF )
+  (    2 GND )
+ )
+ ( /52783C97/527A4FAA $noname  C301 0.1u {Lib=C}
+  (    1 VCC_HALF )
+  (    2 GND )
+ )
+ ( /52783C97/527A4358 $noname  R304 10k {Lib=R}
+  (    1 /east_west/B- )
+  (    2 VCC_HALF )
+ )
+ ( /52783C97/527A4353 $noname  R303 10k {Lib=R}
+  (    1 /east_west/B+ )
+  (    2 VCC_HALF )
+ )
+ ( /52783C97/527A434D $noname  R302 10k {Lib=R}
+  (    1 /east_west/A- )
+  (    2 VCC_HALF )
+ )
+ ( /52783C97/527A4349 $noname  R301 10k {Lib=R}
+  (    1 /east_west/A+ )
+  (    2 VCC_HALF )
+ )
+ ( /52783C97/52782F07 HBridge-DIP16  IC301 SN754410 {Lib=SN754410}
+  (    1 /east_west/ENABLE_A )
+  (    2 PULSE+ )
+  (    3 /east_west/A+ )
+  (    4 GND )
+  (    5 GND )
+  (    6 /east_west/A- )
+  (    7 PULSE- )
+  (    8 +12V )
+  (    9 /east_west/ENABLE_B )
+  (   10 PULSE- )
+  (   11 /east_west/B- )
+  (   12 GND )
+  (   13 GND )
+  (   14 /east_west/B+ )
+  (   15 PULSE+ )
   (   16 +5V )
  )
- ( /52456924 $noname  P7 CONN_2 {Lib=CONN_2}
-  (    1 N-000029 )
-  (    2 N-000025 )
+ ( /52783C97/52782F04 $noname  C305 10u {Lib=C}
+  (    1 +12V )
+  (    2 GND )
  )
- ( /52456698 $noname  P5 CONN_2 {Lib=CONN_2}
-  (    1 /TOP- )
-  (    2 /TOP+ )
+ ( /52783C97/52782F03 $noname  C306 1u {Lib=C}
+  (    1 +12V )
+  (    2 GND )
  )
- ( /52456697 MODULE  U9 TS5A3154 {Lib=TS5A3154}
-  (    1 /TOP+ )
-  (    2 /ENABLE_TOP )
-  (    3 GND )
+ ( /52783C97/52782F02 $noname  C307 0.1u {Lib=C}
+  (    1 +12V )
+  (    2 GND )
+ )
+ ( /52782E6C/527A6473 $noname  K402 CONN_3 {Lib=CONN_3}
+  (    1 /north_south/B- )
+  (    2 GND )
+  (    3 /north_south/B+ )
+ )
+ ( /52782E6C/527A6470 $noname  K401 CONN_3 {Lib=CONN_3}
+  (    1 /north_south/A- )
+  (    2 GND )
+  (    3 /north_south/A+ )
+ )
+ ( /52782E6C/527A5050 $noname  C408 0.1u {Lib=C}
+  (    1 +5V )
+  (    2 GND )
+ )
+ ( /52782E6C/527A4FEE $noname  C403 0.1u {Lib=C}
+  (    1 VCC_HALF )
+  (    2 GND )
+ )
+ ( /52782E6C/527A4FED $noname  C404 1u {Lib=C}
+  (    1 VCC_HALF )
+  (    2 GND )
+ )
+ ( /52782E6C/527A4FAB $noname  C402 1u {Lib=C}
+  (    1 VCC_HALF )
+  (    2 GND )
+ )
+ ( /52782E6C/527A4FAA $noname  C401 0.1u {Lib=C}
+  (    1 VCC_HALF )
+  (    2 GND )
+ )
+ ( /52782E6C/527A4358 $noname  R404 10k {Lib=R}
+  (    1 /north_south/B- )
+  (    2 VCC_HALF )
+ )
+ ( /52782E6C/527A4353 $noname  R403 10k {Lib=R}
+  (    1 /north_south/B+ )
+  (    2 VCC_HALF )
+ )
+ ( /52782E6C/527A434D $noname  R402 10k {Lib=R}
+  (    1 /north_south/A- )
+  (    2 VCC_HALF )
+ )
+ ( /52782E6C/527A4349 $noname  R401 10k {Lib=R}
+  (    1 /north_south/A+ )
+  (    2 VCC_HALF )
+ )
+ ( /52782E6C/52782F07 HBridge-DIP16  IC401 SN754410 {Lib=SN754410}
+  (    1 /north_south/ENABLE_A )
+  (    2 PULSE+ )
+  (    3 /north_south/A+ )
   (    4 GND )
-  (    5 /PULSE+ )
-  (    6 GND )
-  (    7 +5V )
-  (    8 +5V )
+  (    5 GND )
+  (    6 /north_south/A- )
+  (    7 PULSE- )
+  (    8 +12V )
+  (    9 /north_south/ENABLE_B )
+  (   10 PULSE- )
+  (   11 /north_south/B- )
+  (   12 GND )
+  (   13 GND )
+  (   14 /north_south/B+ )
+  (   15 PULSE+ )
+  (   16 +5V )
  )
- ( /52456696 MODULE  U10 TS5A3154 {Lib=TS5A3154}
-  (    1 /TOP- )
-  (    2 /ENABLE_TOP )
-  (    3 GND )
-  (    4 GND )
-  (    5 /PULSE- )
-  (    6 GND )
-  (    7 +5V )
-  (    8 +5V )
+ ( /52782E6C/52782F04 $noname  C405 10u {Lib=C}
+  (    1 +12V )
+  (    2 GND )
  )
- ( /52456689 MODULE  U12 TS5A3154 {Lib=TS5A3154}
-  (    1 /BOTTOM- )
-  (    2 /ENABLE_BOTTOM )
-  (    3 GND )
-  (    4 GND )
-  (    5 /PULSE- )
-  (    6 GND )
-  (    7 +5V )
-  (    8 +5V )
+ ( /52782E6C/52782F03 $noname  C406 1u {Lib=C}
+  (    1 +12V )
+  (    2 GND )
  )
- ( /52456688 MODULE  U11 TS5A3154 {Lib=TS5A3154}
-  (    1 /BOTTOM+ )
-  (    2 /ENABLE_BOTTOM )
-  (    3 GND )
-  (    4 GND )
-  (    5 /PULSE+ )
-  (    6 GND )
-  (    7 +5V )
-  (    8 +5V )
- )
- ( /52456687 $noname  P6 CONN_2 {Lib=CONN_2}
-  (    1 /BOTTOM- )
-  (    2 /BOTTOM+ )
- )
- ( /52456680 $noname  P3 CONN_2 {Lib=CONN_2}
-  (    1 /EAST- )
-  (    2 /EAST+ )
- )
- ( /5245667F MODULE  U5 TS5A3154 {Lib=TS5A3154}
-  (    1 /EAST+ )
-  (    2 /ENABLE_EAST )
-  (    3 GND )
-  (    4 GND )
-  (    5 /PULSE+ )
-  (    6 GND )
-  (    7 +5V )
-  (    8 +5V )
- )
- ( /5245667E MODULE  U6 TS5A3154 {Lib=TS5A3154}
-  (    1 /EAST- )
-  (    2 /ENABLE_EAST )
-  (    3 GND )
-  (    4 GND )
-  (    5 /PULSE- )
-  (    6 GND )
-  (    7 +5V )
-  (    8 +5V )
- )
- ( /52456671 MODULE  U8 TS5A3154 {Lib=TS5A3154}
-  (    1 /WEST- )
-  (    2 /ENABLE_WEST )
-  (    3 GND )
-  (    4 GND )
-  (    5 /PULSE- )
-  (    6 GND )
-  (    7 +5V )
-  (    8 +5V )
- )
- ( /52456670 MODULE  U7 TS5A3154 {Lib=TS5A3154}
-  (    1 /WEST+ )
-  (    2 /ENABLE_WEST )
-  (    3 GND )
-  (    4 GND )
-  (    5 /PULSE+ )
-  (    6 GND )
-  (    7 +5V )
-  (    8 +5V )
- )
- ( /5245666F $noname  P4 CONN_2 {Lib=CONN_2}
-  (    1 /WEST- )
-  (    2 /WEST+ )
- )
- ( /52456623 $noname  P2 CONN_2 {Lib=CONN_2}
-  (    1 /SOUTH- )
-  (    2 /SOUTH+ )
- )
- ( /52456622 MODULE  U3 TS5A3154 {Lib=TS5A3154}
-  (    1 /SOUTH+ )
-  (    2 /ENABLE_SOUTH )
-  (    3 GND )
-  (    4 GND )
-  (    5 /PULSE+ )
-  (    6 GND )
-  (    7 +5V )
-  (    8 +5V )
- )
- ( /52456621 MODULE  U4 TS5A3154 {Lib=TS5A3154}
-  (    1 /SOUTH- )
-  (    2 /ENABLE_SOUTH )
-  (    3 GND )
-  (    4 GND )
-  (    5 /PULSE- )
-  (    6 GND )
-  (    7 +5V )
-  (    8 +5V )
- )
- ( /5245622F MODULE  U2 TS5A3154 {Lib=TS5A3154}
-  (    1 /NORTH- )
-  (    2 /ENABLE_NORTH )
-  (    3 GND )
-  (    4 GND )
-  (    5 /PULSE- )
-  (    6 GND )
-  (    7 +5V )
-  (    8 +5V )
- )
- ( /52456217 MODULE  U1 TS5A3154 {Lib=TS5A3154}
-  (    1 /NORTH+ )
-  (    2 /ENABLE_NORTH )
-  (    3 GND )
-  (    4 GND )
-  (    5 /PULSE+ )
-  (    6 GND )
-  (    7 +5V )
-  (    8 +5V )
- )
- ( /524561A5 $noname  P1 CONN_2 {Lib=CONN_2}
-  (    1 /NORTH- )
-  (    2 /NORTH+ )
+ ( /52782E6C/52782F02 $noname  C407 0.1u {Lib=C}
+  (    1 +12V )
+  (    2 GND )
  )
 )
 *
 { Allowed footprints by component:
-$component C6
+$component C109
  SM*
  C?
  C1-1
 $endlist
-$component C5
- SM*
- C?
- C1-1
-$endlist
-$component C1
- SM*
- C?
- C1-1
-$endlist
-$component R1
+$component R105
  R?
  SM0603
  SM0805
  R?-*
  SM1206
 $endlist
-$component C3
+$component R104
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component D102
+ LED-3MM
+ LED-5MM
+ LED-10MM
+ LED-0603
+ LED-0805
+ LED-1206
+ LEDV
+$endlist
+$component D101
+ LED-3MM
+ LED-5MM
+ LED-10MM
+ LED-0603
+ LED-0805
+ LED-1206
+ LEDV
+$endlist
+$component C110
  SM*
  C?
  C1-1
 $endlist
-$component C4
+$component C111
  SM*
  C?
  C1-1
 $endlist
-$component C2
+$component C113
+ SM*
+ C?
+ C1-1
+$endlist
+$component C112
+ SM*
+ C?
+ C1-1
+$endlist
+$component C101
+ SM*
+ C?
+ C1-1
+$endlist
+$component C102
+ SM*
+ C?
+ C1-1
+$endlist
+$component R102
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R101
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component C107
+ SM*
+ C?
+ C1-1
+$endlist
+$component C106
+ SM*
+ C?
+ C1-1
+$endlist
+$component C103
+ SM*
+ C?
+ C1-1
+$endlist
+$component R103
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component C105
+ SM*
+ C?
+ C1-1
+$endlist
+$component C108
+ SM*
+ C?
+ C1-1
+$endlist
+$component C104
+ SM*
+ C?
+ C1-1
+$endlist
+$component C208
+ SM*
+ C?
+ C1-1
+$endlist
+$component C203
+ SM*
+ C?
+ C1-1
+$endlist
+$component C204
+ SM*
+ C?
+ C1-1
+$endlist
+$component C202
+ SM*
+ C?
+ C1-1
+$endlist
+$component C201
+ SM*
+ C?
+ C1-1
+$endlist
+$component R204
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R203
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R202
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R201
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component C205
+ SM*
+ C?
+ C1-1
+$endlist
+$component C206
+ SM*
+ C?
+ C1-1
+$endlist
+$component C207
+ SM*
+ C?
+ C1-1
+$endlist
+$component C308
+ SM*
+ C?
+ C1-1
+$endlist
+$component C303
+ SM*
+ C?
+ C1-1
+$endlist
+$component C304
+ SM*
+ C?
+ C1-1
+$endlist
+$component C302
+ SM*
+ C?
+ C1-1
+$endlist
+$component C301
+ SM*
+ C?
+ C1-1
+$endlist
+$component R304
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R303
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R302
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R301
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component C305
+ SM*
+ C?
+ C1-1
+$endlist
+$component C306
+ SM*
+ C?
+ C1-1
+$endlist
+$component C307
+ SM*
+ C?
+ C1-1
+$endlist
+$component C408
+ SM*
+ C?
+ C1-1
+$endlist
+$component C403
+ SM*
+ C?
+ C1-1
+$endlist
+$component C404
+ SM*
+ C?
+ C1-1
+$endlist
+$component C402
+ SM*
+ C?
+ C1-1
+$endlist
+$component C401
+ SM*
+ C?
+ C1-1
+$endlist
+$component R404
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R403
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R402
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R401
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component C405
+ SM*
+ C?
+ C1-1
+$endlist
+$component C406
+ SM*
+ C?
+ C1-1
+$endlist
+$component C407
  SM*
  C?
  C1-1
@@ -310,233 +747,306 @@ $endlist
 $endfootprintlist
 }
 { Pin List by Nets
-Net 1 "GND" "GND"
- U7 6
- U8 3
- U7 3
- U8 6
- IC1 5
- U13 7
- CON1 10
- U13 6
- U8 4
- C1 2
- CON1 8
- CON1 6
- IC1 21
- CON1 4
- U1 6
- U5 4
- U5 3
- U6 3
- C5 2
- U1 4
- U4 6
- U3 3
- U3 4
- U3 6
- U7 4
- U4 3
- U4 4
- U13 8
- U6 6
- U6 4
- U1 3
- U2 3
- U2 4
- U2 6
- C6 2
- U5 6
- U11 4
- U11 6
- U12 6
- U11 3
- U10 6
- U10 4
- U9 4
- U9 6
- U10 3
- K1 3
- U14 6
- U14 7
- C4 2
- IC1 3
- C3 2
- C2 2
- U9 3
- U12 3
- U12 4
- U14 8
-Net 2 "/PULSE+" "PULSE+"
- U9 5
- U5 5
- U1 5
- IC1 2
- U13 2
- U11 5
- U3 5
- U7 5
-Net 3 "/TOP-" "TOP-"
- P5 1
- U14 1
- U10 1
-Net 4 "/PULSE-" "PULSE-"
- U8 5
- U4 5
- U6 5
- U2 5
- U10 5
- IC1 1
- U14 2
- U12 5
-Net 5 "+5V" "+5V"
- U11 7
- U14 16
- IC1 4
- U10 8
- IC1 18
- U9 7
- U9 8
- U10 7
- U12 7
- U12 8
- U11 8
- U4 8
- U4 7
- U6 7
- U6 8
- U3 8
- U3 7
- U8 7
- U8 8
- U2 7
- C6 1
- U7 7
- U7 8
- C5 1
- U1 8
- U1 7
- U5 7
- U5 8
- U2 8
- U13 16
- IC1 6
- CON1 2
- C1 1
- R1 1
- K1 1
-Net 6 "/BOTTOM-" "BOTTOM-"
- U14 5
- P6 1
- U12 1
-Net 7 "/BOTTOM+" "BOTTOM+"
- U13 5
- P6 2
- U11 1
-Net 8 "/ENABLE_BOTTOM" "ENABLE_BOTTOM"
- U11 2
- IC1 28
- U12 2
-Net 10 "/ADC_SELECT2" "ADC_SELECT2"
- IC1 14
- U14 9
- U13 9
-Net 11 "/WEST-" "WEST-"
- P4 1
- U8 1
- U14 12
-Net 12 "/NORTH-" "NORTH-"
- U2 1
- U14 13
- P1 1
-Net 13 "/SOUTH-" "SOUTH-"
- U4 1
- P2 1
- U14 14
-Net 14 "/EAST-" "EAST-"
- U6 1
- U14 15
- P3 1
-Net 16 "/EAST+" "EAST+"
- U13 15
- P3 2
- U5 1
-Net 17 "/ADC_SELECT1" "ADC_SELECT1"
- U13 10
- U14 10
- IC1 13
-Net 18 "/ADC_SELECT0" "ADC_SELECT0"
- U14 11
- IC1 12
- U13 11
-Net 19 "/WEST+" "WEST+"
- U13 12
- U7 1
- P4 2
-Net 20 "/NORTH+" "NORTH+"
- U13 13
- P1 2
- U1 1
-Net 21 "/SOUTH+" "SOUTH+"
- U3 1
- U13 14
- P2 2
-Net 22 "/TOP+" "TOP+"
- P5 2
- U9 1
- U13 1
-Net 23 "/ENABLE_TOP" "ENABLE_TOP"
- IC1 27
- U10 2
- U9 2
-Net 24 "/ENABLE_EAST" "ENABLE_EAST"
- IC1 25
- U6 2
- U5 2
-Net 25 "" ""
- U13 3
- P7 2
-Net 26 "/ENABLE_SOUTH" "ENABLE_SOUTH"
- IC1 24
- U4 2
- U3 2
-Net 27 "/ENABLE_WEST" "ENABLE_WEST"
- U8 2
- IC1 26
- U7 2
-Net 28 "/ENABLE_NORTH" "ENABLE_NORTH"
- U2 2
- U1 2
- IC1 23
-Net 29 "" ""
- P7 1
- U14 3
-Net 30 "" ""
- IC1 20
- C2 1
-Net 31 "" ""
- K1 2
- IC1 32
+Net 1 "/east_west/A+" "A+"
+ U102 21
+ K301 3
+ R301 1
+ IC301 3
+Net 2 "/north_south/ENABLE_B" "ENABLE_B"
+ IC101 24
+ IC401 9
+Net 3 "/east_west/A-" "A-"
+ R302 1
+ K301 1
+ U102 9
+ IC301 6
+Net 4 "/east_west/B+" "B+"
+ U102 22
+ IC301 14
+ R303 1
+ K302 3
+Net 5 "/east_west/B-" "B-"
+ K302 1
+ IC301 11
+ R304 1
+ U102 8
+Net 6 "/east_west/ENABLE_A" "ENABLE_A"
+ IC301 1
+ IC101 25
+Net 7 "/east_west/ENABLE_B" "ENABLE_B"
+ IC301 9
+ IC101 26
+Net 8 "/top_bottom/A+" "A+"
+ IC201 3
+ U102 23
+ K201 3
+ R201 1
+Net 9 "/top_bottom/A-" "A-"
+ U102 7
+ R202 1
+ K201 1
+ IC201 6
+Net 10 "/top_bottom/B+" "B+"
+ U102 24
+ K202 3
+ IC201 14
+ R203 1
+Net 11 "/top_bottom/B-" "B-"
+ U102 6
+ IC201 11
+ R204 1
+ K202 1
+Net 12 "GND" "GND"
+ U101 6
+ U102 12
+ C305 2
+ C102 2
+ C101 2
+ K101 3
+ C112 2
+ R102 2
+ IC301 4
+ IC301 5
+ U102 27
+ IC301 12
+ IC301 13
+ C301 2
+ C307 2
+ C306 2
+ C403 2
+ C404 2
+ P102 2
+ C110 2
+ C111 2
+ K402 2
+ C408 2
+ K401 2
+ C402 2
+ P103 5
+ C401 2
+ C407 2
+ C406 2
+ C405 2
+ IC401 4
+ IC401 5
+ D101 2
+ D102 2
+ IC401 12
+ IC401 13
+ P103 6
+ C113 2
+ C203 2
+ C204 2
+ C105 2
+ C108 2
+ C107 2
+ IC101 3
+ C104 2
+ C202 2
+ C103 2
+ C205 2
+ C206 2
+ C207 2
+ IC101 21
+ C201 2
+ IC201 4
+ IC201 5
+ IC101 5
+ IC201 12
+ IC201 13
+ C106 2
+ C304 2
+ C302 2
+ C308 2
+ K301 2
+ K302 2
+ C303 2
+ C208 2
+ CON101 10
+ CON101 8
+ CON101 6
+ CON101 4
+ K201 2
+ K202 2
+Net 13 "/north_south/A+" "A+"
+ IC401 3
+ R401 1
+ K401 3
+ U102 19
+Net 14 "/north_south/A-" "A-"
+ R402 1
+ K401 1
+ U102 11
+ IC401 6
+Net 15 "/north_south/B+" "B+"
+ U102 20
+ K402 3
+ IC401 14
+ R403 1
+Net 16 "/north_south/B-" "B-"
+ R404 1
+ K402 1
+ IC401 11
+ U102 10
+Net 17 "/north_south/ENABLE_A" "ENABLE_A"
+ IC401 1
+ IC101 23
+Net 18 "/PULSE+" "PULSE+"
+ IC101 2
+ U102 25
+Net 19 "" ""
+ U102 28
+ P101 2
+Net 24 "" ""
+ R102 1
+ U101 8
+ R101 2
+Net 28 "VCC_HALF" "VCC_HALF"
+ R302 2
+ C401 1
+ R401 2
+ R402 2
+ R403 2
+ R404 2
+ R303 2
+ R304 2
+ U101 3
+ C301 1
+ C304 1
+ C204 1
+ C302 1
+ C203 1
+ C402 1
+ C404 1
+ C403 1
+ C201 1
+ R201 2
+ R202 2
+ R203 2
+ R301 2
+ C202 1
+ R204 2
+ C303 1
+Net 29 "+12V" "+12V"
+ C106 1
+ IC201 8
+ IC301 8
+ C107 1
+ C307 1
+ C306 1
+ C305 1
+ C406 1
+ C205 1
+ C405 1
+ C407 1
+ U102 1
+ C206 1
+ C207 1
+ C110 1
+ IC401 8
+ C111 1
+ R104 1
+ K101 1
+ R101 1
+ C102 1
+ C101 1
+ U101 1
+Net 31 "/top_bottom/ENABLE_A" "ENABLE_A"
+ IC201 1
+ IC101 27
 Net 32 "" ""
- CON1 7
- IC1 17
+ IC101 17
+ CON101 7
 Net 33 "" ""
- CON1 9
- IC1 16
-Net 35 "" ""
- X1 2
- C4 1
- IC1 7
-Net 37 "" ""
- IC1 15
- CON1 1
-Net 40 "" ""
- X1 1
- C3 1
- IC1 8
+ CON101 9
+ IC101 16
+Net 34 "/ADC_SELECT2" "ADC_SELECT2"
+ IC101 14
+ U102 15
+Net 35 "/ADC_SELECT1" "ADC_SELECT1"
+ IC101 13
+ U102 16
+Net 36 "" ""
+ IC101 32
+ P102 1
+Net 37 "/ADC_SELECT0" "ADC_SELECT0"
+ U102 17
+ IC101 12
+Net 41 "" ""
+ P101 1
+ U102 2
+Net 43 "/top_bottom/ENABLE_B" "ENABLE_B"
+ IC101 28
+ IC201 9
 Net 45 "" ""
- IC1 29
- R1 2
- CON1 5
+ C108 1
+ X101 2
+ IC101 7
+Net 46 "" ""
+ X101 1
+ C105 1
+ IC101 8
+Net 47 "+5V" "+5V"
+ IC201 16
+ R103 1
+ IC101 4
+ C103 1
+ IC101 6
+ IC101 18
+ P103 4
+ U102 18
+ C113 1
+ IC301 16
+ R105 1
+ IC401 16
+ C112 1
+ K101 2
+ C208 1
+ CON101 2
+ C408 1
+ C308 1
+Net 48 "" ""
+ IC101 20
+ C104 1
+Net 49 "" ""
+ D101 1
+ R104 2
+Net 50 "" ""
+ D102 1
+ R105 2
+Net 51 "" ""
+ IC101 31
+ P103 2
+Net 52 "" ""
+ IC101 15
+ CON101 1
+Net 53 "" ""
+ CON101 5
+ R103 2
+ IC101 29
+ C109 1
+Net 54 "" ""
+ C109 2
+ P103 1
+Net 55 "/PULSE-" "PULSE-"
+ IC101 1
+ U102 5
+Net 58 "" ""
+ IC101 30
+ P103 3
+Net 59 "PULSE+" "PULSE+"
+ IC201 2
+ IC301 2
+ IC301 15
+ IC201 15
+ IC401 2
+ IC401 15
+Net 60 "PULSE-" "PULSE-"
+ IC401 10
+ IC401 7
+ IC301 10
+ IC201 7
+ IC301 7
+ IC201 10
 }
 #End
