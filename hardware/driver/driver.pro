@@ -1,4 +1,4 @@
-update=Wed Nov  6 13:17:38 2013
+update=Wed Nov  6 13:55:36 2013
 version=1
 last_client=eeschema
 [general]
@@ -105,3 +105,4 @@ LibName31=TS5A3154
 LibName32=74HC4051
 LibName33=SN754410
 LibName34=LT1010
+LibName35=ADG5207
