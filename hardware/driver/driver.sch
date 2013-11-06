@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Wed Nov  6 14:22:46 2013
+EESchema Schematic File Version 2  date Wed Nov  6 15:05:07 2013
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -49,6 +49,365 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
+Text Notes 12950 4850 0    60   ~ 0
+Input power filter
+Text Notes 14350 5000 0    60   ~ 0
+Power connector
+Text Notes 15150 4600 0    60   ~ 0
+Power indicators
+Wire Wire Line
+	15600 4900 15600 4800
+Wire Wire Line
+	15350 5500 15350 5400
+Wire Wire Line
+	15600 5900 15600 6000
+Wire Wire Line
+	9300 6050 10050 6050
+Wire Wire Line
+	13250 5200 12950 5200
+Wire Wire Line
+	12950 5200 12950 5100
+Wire Wire Line
+	12950 5750 12950 5600
+Wire Wire Line
+	12950 5600 13250 5600
+Wire Wire Line
+	13850 5600 13550 5600
+Wire Wire Line
+	13550 5600 13550 5750
+Wire Wire Line
+	14400 5350 14400 5400
+Wire Wire Line
+	14400 5400 14550 5400
+Wire Wire Line
+	14550 5300 14550 5200
+Wire Wire Line
+	10300 1600 10300 1500
+Wire Wire Line
+	6900 1200 6900 1500
+Wire Wire Line
+	6900 1500 7600 1500
+Wire Wire Line
+	7450 2650 7450 2500
+Wire Wire Line
+	7450 2500 7600 2500
+Wire Wire Line
+	7600 1400 7600 1300
+Wire Wire Line
+	3400 6400 3600 6400
+Wire Wire Line
+	3400 6400 3400 6050
+Wire Wire Line
+	3400 6050 3250 6050
+Wire Wire Line
+	3600 6400 3600 6500
+Wire Wire Line
+	3600 5900 3600 5750
+Wire Wire Line
+	10600 2000 10600 2100
+Wire Wire Line
+	10800 5100 10800 4850
+Wire Wire Line
+	10200 5100 10200 4950
+Wire Wire Line
+	10800 4850 9300 4850
+Wire Wire Line
+	9300 4750 9400 4750
+Wire Wire Line
+	9400 4750 9400 4500
+Wire Wire Line
+	9400 4500 11350 4500
+Wire Wire Line
+	9300 4650 10150 4650
+Wire Wire Line
+	10150 4650 10150 4600
+Wire Wire Line
+	10150 4600 11350 4600
+Wire Wire Line
+	7050 4150 7050 4050
+Wire Wire Line
+	11050 5050 11050 5000
+Connection ~ 10500 5500
+Wire Wire Line
+	10500 5600 10500 5500
+Connection ~ 11600 4600
+Wire Wire Line
+	11600 4300 11600 4800
+Connection ~ 11600 4400
+Connection ~ 7400 6450
+Wire Wire Line
+	7400 6650 7400 6350
+Wire Wire Line
+	7400 4850 7250 4850
+Connection ~ 7400 4250
+Wire Wire Line
+	7400 4150 7400 4550
+Connection ~ 7400 4350
+Wire Wire Line
+	7250 5250 7250 5350
+Connection ~ 7400 6550
+Connection ~ 11600 4500
+Wire Wire Line
+	11600 4200 11600 4050
+Connection ~ 10800 4950
+Wire Wire Line
+	10800 5500 10200 5500
+Wire Wire Line
+	11050 5550 11050 5700
+Wire Wire Line
+	7050 4650 7050 4550
+Wire Wire Line
+	10950 5700 10950 4400
+Wire Wire Line
+	10950 4400 11350 4400
+Connection ~ 10550 5700
+Wire Wire Line
+	9300 4550 10800 4550
+Wire Wire Line
+	10800 4550 10800 4200
+Wire Wire Line
+	10800 4200 11350 4200
+Wire Wire Line
+	11050 5700 9300 5700
+Connection ~ 10950 5700
+Wire Wire Line
+	10200 4950 9300 4950
+Wire Wire Line
+	10300 2000 10300 2100
+Wire Wire Line
+	1750 5850 1700 5850
+Wire Wire Line
+	1700 5850 1700 5700
+Wire Wire Line
+	3250 5850 3600 5850
+Connection ~ 3600 5850
+Wire Wire Line
+	3600 5250 3600 5150
+Wire Wire Line
+	9100 1500 9600 1500
+Wire Wire Line
+	9600 1500 9600 1600
+Wire Wire Line
+	6900 1000 9100 1000
+Wire Wire Line
+	9100 1000 9100 1400
+Wire Wire Line
+	9100 2400 9650 2400
+Wire Wire Line
+	9650 2400 9650 2250
+Wire Wire Line
+	10600 1600 10600 1500
+Wire Wire Line
+	4300 5700 4300 5600
+Wire Wire Line
+	4000 6100 4000 6200
+Wire Wire Line
+	4300 6100 4300 6200
+Wire Wire Line
+	4000 5700 4000 5600
+Wire Wire Line
+	14550 5500 14550 5600
+Wire Wire Line
+	13850 5200 13550 5200
+Wire Wire Line
+	13550 5200 13550 5100
+Wire Wire Line
+	10050 6250 10050 6350
+Wire Wire Line
+	15350 5900 15350 6000
+Wire Wire Line
+	15600 5500 15600 5400
+Wire Wire Line
+	15350 4900 15350 4800
+$Comp
+L R R?
+U 1 1 527A577D
+P 15600 5150
+F 0 "R?" V 15680 5150 50  0000 C CNN
+F 1 "500" V 15600 5150 50  0000 C CNN
+	1    15600 5150
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R?
+U 1 1 527A577A
+P 15350 5150
+F 0 "R?" V 15430 5150 50  0000 C CNN
+F 1 "1k" V 15350 5150 50  0000 C CNN
+	1    15350 5150
+	1    0    0    -1  
+$EndComp
+$Comp
+L LED D?
+U 1 1 527A5761
+P 15600 5700
+F 0 "D?" H 15600 5800 50  0000 C CNN
+F 1 "LED" H 15600 5600 50  0000 C CNN
+	1    15600 5700
+	0    1    1    0   
+$EndComp
+$Comp
+L LED D?
+U 1 1 527A5758
+P 15350 5700
+F 0 "D?" H 15350 5800 50  0000 C CNN
+F 1 "LED" H 15350 5600 50  0000 C CNN
+	1    15350 5700
+	0    1    1    0   
+$EndComp
+$Comp
+L +12V #PWR?
+U 1 1 527A5727
+P 15350 4800
+F 0 "#PWR?" H 15350 4750 20  0001 C CNN
+F 1 "+12V" H 15350 4900 30  0000 C CNN
+	1    15350 4800
+	1    0    0    -1  
+$EndComp
+$Comp
+L +5V #PWR?
+U 1 1 527A5726
+P 15600 4800
+F 0 "#PWR?" H 15600 4890 20  0001 C CNN
+F 1 "+5V" H 15600 4890 30  0000 C CNN
+	1    15600 4800
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 527A5720
+P 15600 6000
+F 0 "#PWR?" H 15600 6000 30  0001 C CNN
+F 1 "GND" H 15600 5930 30  0001 C CNN
+	1    15600 6000
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 527A571B
+P 15350 6000
+F 0 "#PWR?" H 15350 6000 30  0001 C CNN
+F 1 "GND" H 15350 5930 30  0001 C CNN
+	1    15350 6000
+	1    0    0    -1  
+$EndComp
+$Comp
+L CONN_2 P?
+U 1 1 527A566E
+P 10400 6150
+F 0 "P?" V 10350 6150 40  0000 C CNN
+F 1 "CONN_2" V 10450 6150 40  0000 C CNN
+	1    10400 6150
+	1    0    0    -1  
+$EndComp
+$Comp
+L +5V #PWR?
+U 1 1 527A55E0
+P 13550 5100
+F 0 "#PWR?" H 13550 5190 20  0001 C CNN
+F 1 "+5V" H 13550 5190 30  0000 C CNN
+	1    13550 5100
+	1    0    0    -1  
+$EndComp
+$Comp
+L +12V #PWR?
+U 1 1 527A55D3
+P 12950 5100
+F 0 "#PWR?" H 12950 5050 20  0001 C CNN
+F 1 "+12V" H 12950 5200 30  0000 C CNN
+	1    12950 5100
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C?
+U 1 1 527A55D2
+P 12950 5400
+F 0 "C?" H 13000 5500 50  0000 L CNN
+F 1 "10u" H 13000 5300 50  0000 L CNN
+	1    12950 5400
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C?
+U 1 1 527A55D1
+P 13250 5400
+F 0 "C?" H 13300 5500 50  0000 L CNN
+F 1 "1u" H 13300 5300 50  0000 L CNN
+	1    13250 5400
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 527A55D0
+P 12950 5750
+F 0 "#PWR?" H 12950 5750 30  0001 C CNN
+F 1 "GND" H 12950 5680 30  0001 C CNN
+	1    12950 5750
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 527A55A1
+P 13550 5750
+F 0 "#PWR?" H 13550 5750 30  0001 C CNN
+F 1 "GND" H 13550 5680 30  0001 C CNN
+	1    13550 5750
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C?
+U 1 1 527A559F
+P 13850 5400
+F 0 "C?" H 13900 5500 50  0000 L CNN
+F 1 "1u" H 13900 5300 50  0000 L CNN
+	1    13850 5400
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C?
+U 1 1 527A559E
+P 13550 5400
+F 0 "C?" H 13600 5500 50  0000 L CNN
+F 1 "10u" H 13600 5300 50  0000 L CNN
+	1    13550 5400
+	1    0    0    -1  
+$EndComp
+$Comp
+L +12V #PWR?
+U 1 1 527A546E
+P 14550 5200
+F 0 "#PWR?" H 14550 5150 20  0001 C CNN
+F 1 "+12V" H 14550 5300 30  0000 C CNN
+	1    14550 5200
+	1    0    0    -1  
+$EndComp
+$Comp
+L +5V #PWR?
+U 1 1 527A5465
+P 14400 5350
+F 0 "#PWR?" H 14400 5440 20  0001 C CNN
+F 1 "+5V" H 14400 5440 30  0000 C CNN
+	1    14400 5350
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 527A5458
+P 14550 5600
+F 0 "#PWR?" H 14550 5600 30  0001 C CNN
+F 1 "GND" H 14550 5530 30  0001 C CNN
+	1    14550 5600
+	1    0    0    -1  
+$EndComp
+$Comp
+L CONN_3 K?
+U 1 1 527A5450
+P 14900 5400
+F 0 "K?" V 14850 5400 50  0000 C CNN
+F 1 "CONN_3" V 14950 5400 40  0000 C CNN
+	1    14900 5400
+	1    0    0    -1  
+$EndComp
 $Comp
 L GND #PWR?
 U 1 1 527A4F77
@@ -103,136 +462,6 @@ F 1 "+12V" H 4300 5700 30  0000 C CNN
 	1    4300 5600
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	4000 5700 4000 5600
-Wire Wire Line
-	4300 6100 4300 6200
-Wire Wire Line
-	4000 6100 4000 6200
-Wire Wire Line
-	4300 5700 4300 5600
-Wire Wire Line
-	10600 1600 10600 1500
-Wire Wire Line
-	9650 2250 9650 2400
-Wire Wire Line
-	9650 2400 9100 2400
-Wire Wire Line
-	9100 1400 9100 1000
-Wire Wire Line
-	9100 1000 6900 1000
-Wire Wire Line
-	9600 1600 9600 1500
-Wire Wire Line
-	9600 1500 9100 1500
-Wire Wire Line
-	3600 5250 3600 5150
-Connection ~ 3600 5850
-Wire Wire Line
-	3250 5850 3600 5850
-Wire Wire Line
-	1700 5700 1700 5850
-Wire Wire Line
-	1700 5850 1750 5850
-Wire Wire Line
-	10300 2000 10300 2100
-Wire Wire Line
-	9300 4950 10200 4950
-Wire Wire Line
-	11200 5850 11200 5950
-Connection ~ 10950 5700
-Wire Wire Line
-	9300 5700 11050 5700
-Wire Wire Line
-	11350 4200 10800 4200
-Wire Wire Line
-	10800 4200 10800 4550
-Wire Wire Line
-	10800 4550 9300 4550
-Connection ~ 10550 5700
-Wire Wire Line
-	11350 4400 10950 4400
-Wire Wire Line
-	10950 4400 10950 5700
-Wire Wire Line
-	7050 4650 7050 4550
-Wire Wire Line
-	11050 5700 11050 5550
-Wire Wire Line
-	10800 5500 10200 5500
-Connection ~ 10800 4950
-Wire Wire Line
-	11600 4200 11600 4050
-Connection ~ 11600 4500
-Connection ~ 7400 6550
-Wire Wire Line
-	7250 5250 7250 5350
-Connection ~ 7400 4350
-Wire Wire Line
-	7400 4150 7400 4550
-Connection ~ 7400 4250
-Wire Wire Line
-	7400 4850 7250 4850
-Wire Wire Line
-	7400 6650 7400 6350
-Connection ~ 7400 6450
-Connection ~ 11600 4400
-Wire Wire Line
-	11600 4300 11600 4800
-Connection ~ 11600 4600
-Wire Wire Line
-	10500 5600 10500 5500
-Connection ~ 10500 5500
-Wire Wire Line
-	11050 5050 11050 5000
-Wire Wire Line
-	7050 4150 7050 4050
-Wire Wire Line
-	11350 4600 10150 4600
-Wire Wire Line
-	10150 4600 10150 4650
-Wire Wire Line
-	10150 4650 9300 4650
-Wire Wire Line
-	11350 4500 9400 4500
-Wire Wire Line
-	9400 4500 9400 4750
-Wire Wire Line
-	9400 4750 9300 4750
-Wire Wire Line
-	9300 4850 10800 4850
-Wire Wire Line
-	11200 6150 11200 6250
-Wire Wire Line
-	10200 4950 10200 5100
-Wire Wire Line
-	10800 4850 10800 5100
-Wire Wire Line
-	11200 6050 9300 6050
-Wire Wire Line
-	10600 2000 10600 2100
-Wire Wire Line
-	3600 5900 3600 5750
-Wire Wire Line
-	3600 6500 3600 6400
-Wire Wire Line
-	3250 6050 3400 6050
-Wire Wire Line
-	3400 6050 3400 6400
-Wire Wire Line
-	3400 6400 3600 6400
-Wire Wire Line
-	7600 1400 7600 1300
-Wire Wire Line
-	7600 2500 7450 2500
-Wire Wire Line
-	7450 2500 7450 2650
-Wire Wire Line
-	7600 1500 6900 1500
-Wire Wire Line
-	6900 1500 6900 1200
-Wire Wire Line
-	10300 1600 10300 1500
 $Comp
 L +12V #PWR?
 U 1 1 527A4E72
@@ -476,30 +705,12 @@ $EndComp
 Text Notes 11500 1250 0    60   ~ 0
 Copyright UNIVERSIDAD DE CHILE 2013.\n\nThis documentation describes Open Hardware and is licensed under the\nCERN OHL v.1.1 or later.\n\nYou may redistribute and modify this documentation under the terms of the\nCERN OHL v.1.1. (http://ohwr.org/cernohl). This documentation is distributed\nWITHOUT ANY EXPRESS OR IMPLIED WARRANTY, INCLUDING OF\nMERCHANTABILITY, SATISFACTORY QUALITY AND FITNESS FOR A\nPARTICULAR PURPOSE. Please see the CERN OHL v.1.1 for applicable\nconditions.\n
 $Comp
-L +5V #PWR116
-U 1 1 52457421
-P 11200 5850
-F 0 "#PWR116" H 11200 5940 20  0001 C CNN
-F 1 "+5V" H 11200 5940 30  0000 C CNN
-	1    11200 5850
-	1    0    0    -1  
-$EndComp
-$Comp
 L GND #PWR117
 U 1 1 5245741B
-P 11200 6250
-F 0 "#PWR117" H 11200 6250 30  0001 C CNN
-F 1 "GND" H 11200 6180 30  0001 C CNN
-	1    11200 6250
-	1    0    0    -1  
-$EndComp
-$Comp
-L CONN_3 K101
-U 1 1 52457413
-P 11550 6050
-F 0 "K101" V 11500 6050 50  0000 C CNN
-F 1 "CONN_3" V 11600 6050 40  0000 C CNN
-	1    11550 6050
+P 10050 6350
+F 0 "#PWR117" H 10050 6350 30  0001 C CNN
+F 1 "GND" H 10050 6280 30  0001 C CNN
+	1    10050 6350
 	1    0    0    -1  
 $EndComp
 Text Label 9300 4450 0    60   ~ 0
