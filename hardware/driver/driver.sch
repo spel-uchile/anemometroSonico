@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Wed Nov  6 16:00:38 2013
+EESchema Schematic File Version 2  date Wed Nov  6 17:06:21 2013
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -282,7 +282,7 @@ L R R?
 U 1 1 527A577D
 P 15600 5150
 F 0 "R?" V 15680 5150 50  0000 C CNN
-F 1 "500" V 15600 5150 50  0000 C CNN
+F 1 "10k" V 15600 5150 50  0000 C CNN
 	1    15600 5150
 	1    0    0    -1  
 $EndComp
@@ -291,7 +291,7 @@ L R R?
 U 1 1 527A577A
 P 15350 5150
 F 0 "R?" V 15430 5150 50  0000 C CNN
-F 1 "1k" V 15350 5150 50  0000 C CNN
+F 1 "10k" V 15350 5150 50  0000 C CNN
 	1    15350 5150
 	1    0    0    -1  
 $EndComp
