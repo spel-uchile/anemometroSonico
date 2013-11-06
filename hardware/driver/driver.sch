@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Wed Nov  6 14:14:11 2013
+EESchema Schematic File Version 2  date Wed Nov  6 14:22:46 2013
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -49,6 +49,68 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
+$Comp
+L GND #PWR?
+U 1 1 527A4F77
+P 4000 6200
+F 0 "#PWR?" H 4000 6200 30  0001 C CNN
+F 1 "GND" H 4000 6130 30  0001 C CNN
+	1    4000 6200
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 527A4F76
+P 4300 6200
+F 0 "#PWR?" H 4300 6200 30  0001 C CNN
+F 1 "GND" H 4300 6130 30  0001 C CNN
+	1    4300 6200
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C?
+U 1 1 527A4F75
+P 4000 5900
+F 0 "C?" H 4050 6000 50  0000 L CNN
+F 1 "0.1u" H 4050 5800 50  0000 L CNN
+	1    4000 5900
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C?
+U 1 1 527A4F74
+P 4300 5900
+F 0 "C?" H 4350 6000 50  0000 L CNN
+F 1 "1u" H 4350 5800 50  0000 L CNN
+	1    4300 5900
+	1    0    0    -1  
+$EndComp
+$Comp
+L +12V #PWR?
+U 1 1 527A4F73
+P 4000 5600
+F 0 "#PWR?" H 4000 5550 20  0001 C CNN
+F 1 "+12V" H 4000 5700 30  0000 C CNN
+	1    4000 5600
+	1    0    0    -1  
+$EndComp
+$Comp
+L +12V #PWR?
+U 1 1 527A4F72
+P 4300 5600
+F 0 "#PWR?" H 4300 5550 20  0001 C CNN
+F 1 "+12V" H 4300 5700 30  0000 C CNN
+	1    4300 5600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4000 5700 4000 5600
+Wire Wire Line
+	4300 6100 4300 6200
+Wire Wire Line
+	4000 6100 4000 6200
+Wire Wire Line
+	4300 5700 4300 5600
 Wire Wire Line
 	10600 1600 10600 1500
 Wire Wire Line
