@@ -1,4 +1,4 @@
-update=Mon Nov  4 21:37:04 2013
+update=Wed Nov  6 13:17:38 2013
 version=1
 last_client=eeschema
 [general]
@@ -104,3 +104,4 @@ LibName30=valves
 LibName31=TS5A3154
 LibName32=74HC4051
 LibName33=SN754410
+LibName34=LT1010
