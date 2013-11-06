@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Tue Nov  5 00:50:38 2013
+EESchema Schematic File Version 2  date Wed Nov  6 13:29:16 2013
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -32,14 +32,15 @@ LIBS:valves
 LIBS:TS5A3154
 LIBS:74HC4051
 LIBS:SN754410
+LIBS:LT1010
 LIBS:driver-cache
 EELAYER 25  0
 EELAYER END
 $Descr A4 11700 8267
 encoding utf-8
-Sheet 4 4
+Sheet 3 4
 Title ""
-Date "5 nov 2013"
+Date "6 nov 2013"
 Rev ""
 Comp ""
 Comment1 ""
@@ -47,115 +48,200 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text HLabel 1300 1950 2    60   Input ~ 0
+Text GLabel 2000 2050 2    60   Input ~ 0
+VCC_HALF
+Text GLabel 2000 1350 2    60   Input ~ 0
+VCC_HALF
+Wire Wire Line
+	2000 1450 2000 1250
+Wire Wire Line
+	1300 2150 1500 2150
+Wire Wire Line
+	1500 1950 1300 1950
+Connection ~ 5250 1900
+Wire Wire Line
+	5550 1900 4950 1900
+Wire Wire Line
+	4950 1400 4950 1500
+Wire Wire Line
+	3800 950  3800 900 
+Connection ~ 3800 2350
+Connection ~ 3700 2350
+Wire Wire Line
+	3600 2350 4000 2350
+Wire Wire Line
+	4000 2350 4000 2450
+Connection ~ 3900 2350
+Wire Wire Line
+	3900 950  3900 900 
+Wire Wire Line
+	4950 1500 5550 1500
+Connection ~ 5250 1500
+Wire Wire Line
+	4950 1900 4950 2050
+Wire Wire Line
+	1500 1250 1300 1250
+Wire Wire Line
+	1300 1450 1500 1450
+Wire Wire Line
+	2000 1950 2000 2150
+$Comp
+L R R?
+U 1 1 527A4358
+P 1750 2150
+AR Path="/52783CA2/527A4358" Ref="R?"  Part="1" 
+AR Path="/52782E6C/527A4358" Ref="R?"  Part="1" 
+AR Path="/52783C97/527A4358" Ref="R?"  Part="1" 
+F 0 "R?" V 1830 2150 50  0000 C CNN
+F 1 "10k" V 1750 2150 50  0000 C CNN
+	1    1750 2150
+	0    -1   -1   0   
+$EndComp
+$Comp
+L R R?
+U 1 1 527A4353
+P 1750 1950
+AR Path="/52783CA2/527A4353" Ref="R?"  Part="1" 
+AR Path="/52782E6C/527A4353" Ref="R?"  Part="1" 
+AR Path="/52783C97/527A4353" Ref="R?"  Part="1" 
+F 0 "R?" V 1830 1950 50  0000 C CNN
+F 1 "10k" V 1750 1950 50  0000 C CNN
+	1    1750 1950
+	0    -1   -1   0   
+$EndComp
+$Comp
+L R R?
+U 1 1 527A434D
+P 1750 1450
+AR Path="/52783CA2/527A434D" Ref="R?"  Part="1" 
+AR Path="/52782E6C/527A434D" Ref="R?"  Part="1" 
+AR Path="/52783C97/527A434D" Ref="R?"  Part="1" 
+F 0 "R?" V 1830 1450 50  0000 C CNN
+F 1 "10k" V 1750 1450 50  0000 C CNN
+	1    1750 1450
+	0    -1   -1   0   
+$EndComp
+$Comp
+L R R?
+U 1 1 527A4349
+P 1750 1250
+AR Path="/52783CA2/527A4349" Ref="R?"  Part="1" 
+AR Path="/52782E6C/527A4349" Ref="R?"  Part="1" 
+AR Path="/52783C97/527A4349" Ref="R?"  Part="1" 
+F 0 "R?" V 1830 1250 50  0000 C CNN
+F 1 "10k" V 1750 1250 50  0000 C CNN
+	1    1750 1250
+	0    -1   -1   0   
+$EndComp
+Text HLabel 1300 2150 3    60   Input ~ 0
 B-
-Text HLabel 1300 1750 2    60   Input ~ 0
+Text HLabel 1300 1950 1    60   Input ~ 0
 B+
-Text HLabel 1300 1550 2    60   Input ~ 0
+Text HLabel 1300 1450 3    60   Input ~ 0
 A-
-Text HLabel 1300 1350 2    60   Input ~ 0
+Text HLabel 1300 1250 1    60   Input ~ 0
 A+
-Text HLabel 3850 1450 2    60   Input ~ 0
+Text HLabel 4500 1450 2    60   Input ~ 0
 ENABLE_B
-Text HLabel 2550 1450 0    60   Input ~ 0
+Text HLabel 3200 1450 0    60   Input ~ 0
 ENABLE_A
-Text GLabel 3850 1550 2    60   Input ~ 0
+Text GLabel 4500 1550 2    60   Input ~ 0
 PULSE+
-Text GLabel 3850 1650 2    60   Input ~ 0
+Text GLabel 4500 1650 2    60   Input ~ 0
 PULSE-
-Text GLabel 2550 1650 0    60   Input ~ 0
+Text GLabel 3200 1650 0    60   Input ~ 0
 PULSE-
-Text GLabel 2550 1550 0    60   Input ~ 0
+Text GLabel 3200 1550 0    60   Input ~ 0
 PULSE+
 $Comp
 L CONN_2 P201
 U 1 1 52782F0B
-P 950 1450
+P 950 1350
 AR Path="/52783CA2/52782F0B" Ref="P201"  Part="1" 
 AR Path="/52783C97/52782F0B" Ref="P301"  Part="1" 
 AR Path="/52782E6C/52782F0B" Ref="P401"  Part="1" 
-F 0 "P401" V 900 1450 40  0000 C CNN
-F 1 "CONN_2" V 1000 1450 40  0000 C CNN
-	1    950  1450
+F 0 "P301" V 900 1350 40  0000 C CNN
+F 1 "CONN_2" V 1000 1350 40  0000 C CNN
+	1    950  1350
 	-1   0    0    1   
 $EndComp
 $Comp
 L GND #PWR203
 U 1 1 52782F0A
-P 3350 2450
+P 4000 2450
 AR Path="/52783CA2/52782F0A" Ref="#PWR203"  Part="1" 
 AR Path="/52783C97/52782F0A" Ref="#PWR303"  Part="1" 
 AR Path="/52782E6C/52782F0A" Ref="#PWR403"  Part="1" 
-F 0 "#PWR403" H 3350 2450 30  0001 C CNN
-F 1 "GND" H 3350 2380 30  0001 C CNN
-	1    3350 2450
+F 0 "#PWR303" H 4000 2450 30  0001 C CNN
+F 1 "GND" H 4000 2380 30  0001 C CNN
+	1    4000 2450
 	1    0    0    -1  
 $EndComp
 $Comp
 L +5V #PWR201
 U 1 1 52782F09
-P 3150 900
+P 3800 900
 AR Path="/52783CA2/52782F09" Ref="#PWR201"  Part="1" 
 AR Path="/52783C97/52782F09" Ref="#PWR301"  Part="1" 
 AR Path="/52782E6C/52782F09" Ref="#PWR401"  Part="1" 
-F 0 "#PWR401" H 3150 990 20  0001 C CNN
-F 1 "+5V" H 3150 990 30  0000 C CNN
-	1    3150 900 
+F 0 "#PWR301" H 3800 990 20  0001 C CNN
+F 1 "+5V" H 3800 990 30  0000 C CNN
+	1    3800 900 
 	1    0    0    -1  
 $EndComp
-Text Label 1300 1350 0    60   ~ 0
+Text Label 1300 1250 0    60   ~ 0
 A+
-Text Label 1300 1550 0    60   ~ 0
+Text Label 1300 1450 0    60   ~ 0
 A-
-Text Label 1300 1950 0    60   ~ 0
+Text Label 1300 2150 0    60   ~ 0
 B-
-Text Label 1300 1750 0    60   ~ 0
+Text Label 1300 1950 0    60   ~ 0
 B+
 $Comp
 L CONN_2 P202
 U 1 1 52782F08
-P 950 1850
+P 950 2050
 AR Path="/52783CA2/52782F08" Ref="P202"  Part="1" 
 AR Path="/52783C97/52782F08" Ref="P302"  Part="1" 
 AR Path="/52782E6C/52782F08" Ref="P402"  Part="1" 
-F 0 "P402" V 900 1850 40  0000 C CNN
-F 1 "CONN_2" V 1000 1850 40  0000 C CNN
-	1    950  1850
+F 0 "P302" V 900 2050 40  0000 C CNN
+F 1 "CONN_2" V 1000 2050 40  0000 C CNN
+	1    950  2050
 	-1   0    0    1   
 $EndComp
 $Comp
 L SN754410 IC?
 U 1 1 52782F07
-P 3150 1850
+P 3800 1850
 AR Path="/5278139E" Ref="IC?"  Part="1" 
 AR Path="/52782E6C/52782F07" Ref="IC401"  Part="1" 
 AR Path="/52783250/52782F07" Ref="IC?"  Part="1" 
 AR Path="/52783CA2/52782F07" Ref="IC201"  Part="1" 
 AR Path="/52783C97/52782F07" Ref="IC301"  Part="1" 
-F 0 "IC401" H 2750 2550 50  0000 L BNN
-F 1 "SN754410" H 3350 1450 50  0000 L BNN
-F 2 "HBridge-DIP16" H 3150 2000 50  0001 C CNN
-	1    3150 1850
+F 0 "IC301" H 3400 2550 50  0000 L BNN
+F 1 "SN754410" H 4000 1450 50  0000 L BNN
+F 2 "HBridge-DIP16" H 3800 2000 50  0001 C CNN
+	1    3800 1850
 	1    0    0    -1  
 $EndComp
-Text Label 2550 1950 2    60   ~ 0
+Text Label 3200 1950 2    60   ~ 0
 A-
-Text Label 2550 1850 2    60   ~ 0
+Text Label 3200 1850 2    60   ~ 0
 A+
-Text Label 3850 1850 0    60   ~ 0
+Text Label 4500 1850 0    60   ~ 0
 B+
-Text Label 3850 1950 0    60   ~ 0
+Text Label 4500 1950 0    60   ~ 0
 B-
 $Comp
 L +12V #PWR202
 U 1 1 52782F06
-P 3250 900
+P 3900 900
 AR Path="/52783CA2/52782F06" Ref="#PWR202"  Part="1" 
 AR Path="/52783C97/52782F06" Ref="#PWR302"  Part="1" 
 AR Path="/52782E6C/52782F06" Ref="#PWR402"  Part="1" 
-F 0 "#PWR402" H 3250 850 20  0001 C CNN
-F 1 "+12V" H 3250 1000 30  0000 C CNN
-	1    3250 900 
+F 0 "#PWR302" H 3900 850 20  0001 C CNN
+F 1 "+12V" H 3900 1000 30  0000 C CNN
+	1    3900 900 
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -165,7 +251,7 @@ P 4950 1400
 AR Path="/52783CA2/52782F05" Ref="#PWR204"  Part="1" 
 AR Path="/52783C97/52782F05" Ref="#PWR304"  Part="1" 
 AR Path="/52782E6C/52782F05" Ref="#PWR404"  Part="1" 
-F 0 "#PWR404" H 4950 1350 20  0001 C CNN
+F 0 "#PWR304" H 4950 1350 20  0001 C CNN
 F 1 "+12V" H 4950 1500 30  0000 C CNN
 	1    4950 1400
 	1    0    0    -1  
@@ -177,7 +263,7 @@ P 4950 1700
 AR Path="/52783CA2/52782F04" Ref="C201"  Part="1" 
 AR Path="/52783C97/52782F04" Ref="C301"  Part="1" 
 AR Path="/52782E6C/52782F04" Ref="C401"  Part="1" 
-F 0 "C401" H 5000 1800 50  0000 L CNN
+F 0 "C301" H 5000 1800 50  0000 L CNN
 F 1 "10u" H 5000 1600 50  0000 L CNN
 	1    4950 1700
 	1    0    0    -1  
@@ -189,7 +275,7 @@ P 5250 1700
 AR Path="/52783CA2/52782F03" Ref="C202"  Part="1" 
 AR Path="/52783C97/52782F03" Ref="C302"  Part="1" 
 AR Path="/52782E6C/52782F03" Ref="C402"  Part="1" 
-F 0 "C402" H 5300 1800 50  0000 L CNN
+F 0 "C302" H 5300 1800 50  0000 L CNN
 F 1 "1u" H 5300 1600 50  0000 L CNN
 	1    5250 1700
 	1    0    0    -1  
@@ -201,7 +287,7 @@ P 5550 1700
 AR Path="/52783CA2/52782F02" Ref="C203"  Part="1" 
 AR Path="/52783C97/52782F02" Ref="C303"  Part="1" 
 AR Path="/52782E6C/52782F02" Ref="C403"  Part="1" 
-F 0 "C403" H 5600 1800 50  0000 L CNN
+F 0 "C303" H 5600 1800 50  0000 L CNN
 F 1 "0.1u" H 5600 1600 50  0000 L CNN
 	1    5550 1700
 	1    0    0    -1  
@@ -213,30 +299,9 @@ P 4950 2050
 AR Path="/52783CA2/52782F01" Ref="#PWR205"  Part="1" 
 AR Path="/52783C97/52782F01" Ref="#PWR305"  Part="1" 
 AR Path="/52782E6C/52782F01" Ref="#PWR405"  Part="1" 
-F 0 "#PWR405" H 4950 2050 30  0001 C CNN
+F 0 "#PWR305" H 4950 2050 30  0001 C CNN
 F 1 "GND" H 4950 1980 30  0001 C CNN
 	1    4950 2050
 	1    0    0    -1  
 $EndComp
-Connection ~ 5250 1900
-Wire Wire Line
-	4950 1900 5550 1900
-Wire Wire Line
-	4950 1500 4950 1400
-Wire Wire Line
-	3150 950  3150 900 
-Connection ~ 3150 2350
-Connection ~ 3050 2350
-Wire Wire Line
-	3350 2350 2950 2350
-Wire Wire Line
-	3350 2450 3350 2350
-Connection ~ 3250 2350
-Wire Wire Line
-	3250 950  3250 900 
-Wire Wire Line
-	5550 1500 4950 1500
-Connection ~ 5250 1500
-Wire Wire Line
-	4950 2050 4950 1900
 $EndSCHEMATC
