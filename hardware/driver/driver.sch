@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Wed Nov  6 17:54:30 2013
+EESchema Schematic File Version 2  date Wed Nov  6 23:35:55 2013
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -49,6 +49,10 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
+Text GLabel 9300 6150 2    60   Input ~ 0
+PULSE-
+Text GLabel 9300 6250 2    60   Input ~ 0
+PULSE+
 Connection ~ 11800 6200
 Wire Wire Line
 	11800 6300 11800 6100
