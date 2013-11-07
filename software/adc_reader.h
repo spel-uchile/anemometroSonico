@@ -26,7 +26,7 @@ struct mpsse_context;
 // This class provides access to the hardware of the anemometer.
 //
 // This connection is implemented using an analog-digital converter (ADC)
-// connected to the USB though an SPI-USB bridge.
+// connected to the USB through an SPI-USB bridge.
 class ADCReader {
  public:
   // Opens a communication channel with the underlying ADC.
