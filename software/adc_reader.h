@@ -37,13 +37,22 @@ class ADCReader {
   // Reads one frame of data from the anemometer. This frame consists of two
   // measurements per direction. Each direction includes the excitation signal
   // on one transducer and the echo of the paired transducer.
-  void GetFrame(int16_t *buffer, unsigned int buffer_size);
+  void GetFrame(double *buffer, int buffer_size);
+  // Converts a single reading from the ADC format to double.
+  static double ConvertFromADCFormat(int16_t data);
  private:
   // Communication interface with the ADC.
   struct mpsse_context *adc_;
+  // Buffer to store the data from adc. It is reused between calls for
+  // efficiency.
+  int16_t *reading_buffer_;
   // Speed of the communication with the ADC. The actual sampling rate can be
   // calculated as kSpiClock/16.
   static const int kSpiClock = 15000000;
+
+  // Disallow copy and assign.
+  ADCReader(const ADCReader &);
+  ADCReader &operator=(const ADCReader &);
 };
 
 #endif  // ADC_READER_H_
