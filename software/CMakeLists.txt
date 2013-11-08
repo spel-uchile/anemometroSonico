@@ -11,6 +11,7 @@ include_directories(${PYTHON_INCLUDE_PATH})
 
 #python targets
 file(COPY plot_from_adc.py DESTINATION .)
+file(COPY data_recorder.py DESTINATION .)
 
 # Swig targets
 SET_SOURCE_FILES_PROPERTIES(adc_reader.i PROPERTIES CPLUSPLUS ON)
