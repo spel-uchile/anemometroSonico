@@ -66,4 +66,21 @@ plt.ylabel('Amplitude')
 plt.legend(('NORTH','SOUTH'))
 plt.ylim(ymin, ymax)
 
+plt.figure()
+plt.subplot(211)
+plt.plot(echoes_v_zero[0]['NORTH'] - echoes_noecho[0]['NORTH'])
+plt.grid(True)
+plt.legend(('NORTH'))
+plt.xlabel('Samples')
+plt.ylabel('Amplitude')
+ymin, ymax = plt.ylim()
+
+plt.subplot(212)
+plt.plot(echoes_v_zero[0]['SOUTH'] - echoes_noecho[0]['SOUTH'])
+plt.grid(True)
+plt.legend(('SOUTH'))
+plt.xlabel('Samples')
+plt.ylabel('Amplitude')
+plt.ylim(ymin, ymax)
+
 
