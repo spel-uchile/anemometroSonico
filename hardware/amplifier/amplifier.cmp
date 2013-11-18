@@ -1,0 +1,94 @@
+Cmp-Mod V01 Created by CvPcb (2013-jul-07)-stable date = Mon Nov 18 14:27:43 2013
+
+BeginCmp
+TimeStamp = /527A9C69;
+Reference = C1;
+ValeurCmp = 0.1uF;
+IdModule  = SM0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /527A9C78;
+Reference = C2;
+ValeurCmp = 1uF;
+IdModule  = SM0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /527A9C87;
+Reference = C3;
+ValeurCmp = 10uF;
+IdModule  = SM1206;
+EndCmp
+
+BeginCmp
+TimeStamp = /527A8858;
+Reference = D1;
+ValeurCmp = ZENER;
+IdModule  = sot23;
+EndCmp
+
+BeginCmp
+TimeStamp = /527A9115;
+Reference = D2;
+ValeurCmp = ZENER;
+IdModule  = sot23;
+EndCmp
+
+BeginCmp
+TimeStamp = /527A8942;
+Reference = K1;
+ValeurCmp = Out;
+IdModule  = bornier3;
+EndCmp
+
+BeginCmp
+TimeStamp = /527A892A;
+Reference = P1;
+ValeurCmp = Sensor;
+IdModule  = bornier2;
+EndCmp
+
+BeginCmp
+TimeStamp = /527A893A;
+Reference = P2;
+ValeurCmp = Pwr;
+IdModule  = bornier2;
+EndCmp
+
+BeginCmp
+TimeStamp = /527908C9;
+Reference = R1;
+ValeurCmp = R;
+IdModule  = SM0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /527A87E3;
+Reference = R2;
+ValeurCmp = 10K;
+IdModule  = SM1206;
+EndCmp
+
+BeginCmp
+TimeStamp = /527A9086;
+Reference = R3;
+ValeurCmp = 10K;
+IdModule  = SM1206;
+EndCmp
+
+BeginCmp
+TimeStamp = /52790849;
+Reference = U1;
+ValeurCmp = AD8223;
+IdModule  = SO8N;
+EndCmp
+
+BeginCmp
+TimeStamp = /527A8FF5;
+Reference = U2;
+ValeurCmp = LT1010;
+IdModule  = DIP-8__300;
+EndCmp
+
+EndListe
