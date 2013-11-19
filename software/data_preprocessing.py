@@ -17,35 +17,66 @@
 # Authors: Karel Mundnich <kmundnic@ing.uchile.cl>
 
 import numpy as np
+import logging
+
+from scipy.io import netcdf
 
 DIRECTIONS = ('NORTH', 'SOUTH')
 EXCITATION_LENGTH = 250
 ECHO_LENGTH = 1400
 SIGNAL_LENGTH = 2200
+NUMBER_OF_PULSES = 3
+EXCITATION_PERIOD = 35
+PULSE_AMPLITUDE = 1976
+
+def load_data_from_file(file_path):
+  """ Loads data from and NetCDF file and returns a numpy.ndarray with the full
+      data frame.
+  """
+  # Open data
+  f = netcdf.netcdf_file(file_path, 'r')
+  # Load data into a variable  
+  aux = f.variables['frame']
+  # Copy data into a new numpy array for security
+  measurement = np.array(aux.data)
+  f.close()
+  return measurement
 
 def frame_sanity_check(frame):
   """ Prevents non-desired behavior where the collected frame does not include
-      the excitation pulses sent to the transducer.
+      all of the excitation pulses sent to the transducer.
       The existence of the excitation pulses is determined by thresholding the
-      derivative of the frame.
-  """
+      derivative of the frame, and counting the amount of pulses.
+  """  
   # A threshold of 2000 is used since the ADC saturates at 2048, and the 
   # excitation pulses reach the 2000 level. Therefore, the derivative must be
   # higher than 2000.
-  if np.max(np.diff(frame)) > 2000:
+  if np.max(np.diff(frame)) > PULSE_AMPLITUDE:
+    # If the condition is met, we check that there are NUMBER_OF_PULSES pulses
+    # in the excitation stage of the frame.
+    for i in range(NUMBER_OF_PULSES):
+      idx = edge_detection(frame)
+      # We check that the signal has a certain period that is related to 
+      # The variable EXCITATION_PERIOD       
+      if frame[idx + np.floor(EXCITATION_PERIOD*1/4)] < 0:
+        return False
+      if frame[idx + np.floor(EXCITATION_PERIOD*3/4)] > 0:
+        return False
+      # Cut the frame and check for the rest of the the pulses.
+      frame = frame[idx + 25:-1]
+    # If there are NUMBER_OF_PULSES pulses, we return true
     return True
   else:
     return False
 
-def flank_detection(frame):
-  """ Detect the first excitation pulse (flank) of the frame by using zero-
+def edge_detection(frame):
+  """ Detect the first excitation pulse (edge) of the frame by using zero-
       crossings.
   """
   assert len(frame) > 0
   return np.where(np.diff(np.sign(frame)))[0][0]
 
-
-def split_frame(frame, number_of_measurements):
+def split_frame(frame):
   """ Splits the complete measurement frame into several echoes that are
       returned in a list of dictionaries. Each list item represents a 
       measurement, and each dictionary entry contains a key in 
@@ -55,35 +86,25 @@ def split_frame(frame, number_of_measurements):
   echo = dict() # Create an echo dictionary
   echoes = [] # Create an echoes list.
 
-  for i in range(number_of_measurements):
-    try:
-      for direction in DIRECTIONS:
-        # Perform sanity check for only 1 signal in frame
-        assert frame_sanity_check(frame[0:SIGNAL_LENGTH])
-  
-        # Detect the flank of the excitation pulse
-        flank = flank_detection(frame)
-        
-        # We save the first excitation + echo from the frame and then delete it 
-        # from the frame
-        signal = frame[flank:flank + SIGNAL_LENGTH]
-        frame = frame[flank + SIGNAL_LENGTH:-1]
-        
-        # Save the measurement for each direction in a dictionary
-        echo[direction] = signal[EXCITATION_LENGTH:EXCITATION_LENGTH + \
-                                                   ECHO_LENGTH]
-    except:
-      # If sanity check is False, the frame is cut to check for the next
-      # excitation pulse. Because of the Enable in (nombrar archivo), the signal
-      # always returns to -1501. We use this information to find the following
-      # excitation + echo. If no pre-excitation stage is found, None is
-      # returned.
-      try:
-        idx = np.where(frame = -1501)[0][0]
-        frame = frame[idx:-1]
-      except:
-        return None
+  for direction in DIRECTIONS:
+    # Perform sanity check for only 1 signal in frame
+    if frame_sanity_check(frame[0:SIGNAL_LENGTH]) == True:
+      # Detect the edge of the excitation pulse
+      edge = edge_detection(frame)
       
-    echoes.append(echo)
-    
-  return echoes
+      # We save the first excitation + echo from the frame and then delete it 
+      # from the frame
+      signal = frame[edge:edge + SIGNAL_LENGTH]
+      frame = frame[edge + SIGNAL_LENGTH:-1]
+      
+      # Save the measurement for each direction in a dictionary
+      echo[direction] = signal[EXCITATION_LENGTH:(EXCITATION_LENGTH +
+                                                  ECHO_LENGTH)]
+      echoes.append(echo)
+
+    else:
+      message = 'Lost ' + direction + ' measurement...'
+      logging.info(message)
+      return None
+
+  return echoes  
