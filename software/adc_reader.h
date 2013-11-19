@@ -40,14 +40,17 @@ class ADCReader {
   void GetFrame(double *buffer, int buffer_size);
   // Converts a single reading from the ADC format to double.
   static double ConvertFromADCFormat(int16_t data);
+
  private:
   // Communication interface with the ADC.
   struct mpsse_context *adc_;
   // Buffer to store the data from adc. It is reused between calls for
   // efficiency.
   int16_t *reading_buffer_;
-  // Speed of the communication with the ADC. The actual sampling rate can be
-  // calculated as kSpiClock/16.
+  // Speed of the communication with the ADC. Every sample is put in two bytes
+  // so the actual sampling rate can be calculated as kSpiClock/16. The maximum
+  // speed of the ADC (16 MHz) cannot be achieved since the USB interface has a
+  // clock of 30 MHz (only generates frecuencies that are divisors of 30MHz).
   static const int kSpiClock = 15000000;
 
   // Disallow copy and assign.

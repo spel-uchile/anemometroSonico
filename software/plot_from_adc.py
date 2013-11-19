@@ -1,3 +1,5 @@
+# Example of how to use adc_reader. It will plot one frame.
+
 import adc_reader
 import numpy as np
 
@@ -10,6 +12,4 @@ reader.GetFrame(data)
 
 plot(data)
 show()
-
-print data
 
