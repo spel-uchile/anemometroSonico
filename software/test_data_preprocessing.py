@@ -25,16 +25,16 @@ class TestDataPreprocessing(unittest.TestCase):
   
   def setUp(self):
     # Data paths
-    self.file_noecho = './test_data/frame_no_echo.nc'
-    self.file_v_zero = './test_data/frame_v_zero.nc'
-    self.file_faulty = './test_data/frame_with_faulty_excitation.nc'
-    self.file_noexci = './test_data/frame_with_no_excitation.nc'
+    file_noecho = './test_data/frame_no_echo.nc'
+    file_v_zero = './test_data/frame_v_zero.nc'
+    file_faulty = './test_data/frame_with_faulty_excitation.nc'
+    file_noexci = './test_data/frame_with_no_excitation.nc'
     
     # Data loading
-    self.frame_noecho = utilities.load_data_from_file(self.file_noecho)
-    self.frame_v_zero = utilities.load_data_from_file(self.file_v_zero)
-    self.frame_faulty = utilities.load_data_from_file(self.file_faulty)
-    self.frame_noexci = utilities.load_data_from_file(self.file_noexci)
+    self.frame_noecho = utilities.load_data_from_file(file_noecho)
+    self.frame_v_zero = utilities.load_data_from_file(file_v_zero)
+    self.frame_faulty = utilities.load_data_from_file(file_faulty)
+    self.frame_noexci = utilities.load_data_from_file(file_noexci)
     
   def test_frame_sanity_check(self):
     self.assertTrue(dpp.frame_sanity_check(self.frame_noecho))
@@ -48,8 +48,7 @@ class TestDataPreprocessing(unittest.TestCase):
 
   def test_split_frame(self):
     echoes_v_zero = dpp.split_frame(self.frame_v_zero)
-    self.assertTrue(np.max(echoes_v_zero[0]['NORTH']) in np.arange(400, 
-                                                                        600))
+    self.assertTrue(np.max(echoes_v_zero[0]['NORTH']) in np.arange(400, 600))
     echoes_faulty = dpp.split_frame(self.frame_faulty)
     self.assertEqual(echoes_faulty, None)
     
