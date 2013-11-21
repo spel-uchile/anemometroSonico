@@ -31,38 +31,27 @@ class TestDataPreprocessing(unittest.TestCase):
     self.file_noexci = './test_data/frame_with_no_excitation.nc'
     
     # Data loading
-    self.echoes_noecho = utilities.load_data_from_file(self.file_noecho)
-    self.echoes_v_zero = utilities.load_data_from_file(self.file_v_zero)
-    self.echoes_faulty = utilities.load_data_from_file(self.file_faulty)
-    self.echoes_noexci = utilities.load_data_from_file(self.file_noexci)
+    self.frame_noecho = utilities.load_data_from_file(self.file_noecho)
+    self.frame_v_zero = utilities.load_data_from_file(self.file_v_zero)
+    self.frame_faulty = utilities.load_data_from_file(self.file_faulty)
+    self.frame_noexci = utilities.load_data_from_file(self.file_noexci)
     
   def test_frame_sanity_check(self):
-    measurement_noecho = dpp.load_data_from_file(self.file_noecho)
-    self.assertTrue(dpp.frame_sanity_check(measurement_noecho))
-    
-    measurement_v_zero = dpp.load_data_from_file(self.file_v_zero)
-    self.assertTrue(dpp.frame_sanity_check(measurement_v_zero))
-    
-    measurement_faulty = dpp.load_data_from_file(self.file_faulty)
-    self.assertFalse(dpp.frame_sanity_check(measurement_faulty))
-    
-    measurement_noexci = dpp.load_data_from_file(self.file_noexci)
-    self.assertFalse(dpp.frame_sanity_check(measurement_noexci))
+    self.assertTrue(dpp.frame_sanity_check(self.frame_noecho))
+    self.assertTrue(dpp.frame_sanity_check(self.frame_v_zero))
+    self.assertFalse(dpp.frame_sanity_check(self.frame_faulty))
+    self.assertFalse(dpp.frame_sanity_check(self.frame_noexci))
     
   def test_edge_detection(self):
-    measurement_noecho = dpp.load_data_from_file(self.file_noecho)
-    self.assertEqual(dpp.edge_detection(measurement_noecho), 783)
-    
-    measurement_v_zero = dpp.load_data_from_file(self.file_v_zero)
-    self.assertEqual(dpp.edge_detection(measurement_v_zero), 810)
+    self.assertEqual(dpp.edge_detection(self.frame_noecho), 783)
+    self.assertEqual(dpp.edge_detection(self.frame_v_zero), 810)
 
   def test_split_frame(self):
-    echoes_v_zero = dpp.split_frame(dpp.load_data_from_file(self.file_v_zero))
-    self.assertTrue(np.max(echoes_v_zero[0]['NORTH']) in np.arange(400, 600))
-    
-    echoes_faulty = dpp.split_frame(dpp.load_data_from_file(self.file_faulty))
+    echoes_v_zero = dpp.split_frame(self.frame_v_zero)
+    self.assertTrue(np.max(echoes_v_zero[0]['NORTH']) in np.arange(400, 
+                                                                        600))
+    echoes_faulty = dpp.split_frame(self.frame_faulty)
     self.assertEqual(echoes_faulty, None)
     
-  
 if __name__ == '__main__':
   unittest.main()
