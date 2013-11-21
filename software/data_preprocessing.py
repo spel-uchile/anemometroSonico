@@ -19,28 +19,20 @@
 import numpy as np
 import logging
 
-from scipy.io import netcdf
-
+# Directions of sonic measurement
 DIRECTIONS = ('NORTH', 'SOUTH')
+# Maximum length of the train of excitation pulses
 EXCITATION_LENGTH = 250
+# Maximum length of echo
 ECHO_LENGTH = 1400
+# Maximum length of excitation pulses plus echo
 SIGNAL_LENGTH = 2200
+# Number of excitation pulses in the excitation train
 NUMBER_OF_PULSES = 3
-EXCITATION_PERIOD = 35
+# Signal period in samples
+EXCITATION_PERIOD = 36
+# Maximum amplitude of excitation pulses
 PULSE_AMPLITUDE = 1976
-
-def load_data_from_file(file_path):
-  """ Loads data from and NetCDF file and returns a numpy.ndarray with the full
-      data frame.
-  """
-  # Open data
-  f = netcdf.netcdf_file(file_path, 'r')
-  # Load data into a variable  
-  aux = f.variables['frame']
-  # Copy data into a new numpy array for security
-  measurement = np.array(aux.data)
-  f.close()
-  return measurement
 
 def frame_sanity_check(frame):
   """ Prevents non-desired behavior where the collected frame does not include
@@ -48,23 +40,25 @@ def frame_sanity_check(frame):
       The existence of the excitation pulses is determined by thresholding the
       derivative of the frame, and counting the amount of pulses.
   """  
-  # A threshold of 2000 is used since the ADC saturates at 2048, and the 
-  # excitation pulses reach the 2000 level. Therefore, the derivative must be
-  # higher than 2000.
+  # A threshold of PULSE_AMPLITUDE is used since the ADC saturates at 2048, and
+  # the excitation pulses reach the PULSE_AMPLITUDE level. Therefore, the 
+  # derivative must be higher than PULSE_AMPLITUDE.
   if np.max(np.diff(frame)) > PULSE_AMPLITUDE:
     # If the condition is met, we check that there are NUMBER_OF_PULSES pulses
     # in the excitation stage of the frame.
     for i in range(NUMBER_OF_PULSES):
       idx = edge_detection(frame)
       # We check that the signal has a certain period that is related to 
-      # The variable EXCITATION_PERIOD       
+      # the variable EXCITATION_PERIOD.     
       if frame[idx + np.floor(EXCITATION_PERIOD*1/4)] < 0:
         return False
       if frame[idx + np.floor(EXCITATION_PERIOD*3/4)] > 0:
         return False
-      # Cut the frame and check for the rest of the the pulses.
-      frame = frame[idx + 25:-1]
-    # If there are NUMBER_OF_PULSES pulses, we return true
+      # Cut the frame and check for the rest of the pulses. We advance until 3/4
+      # of the current pulse to make sure that we start looking for the next
+      # rising edge before it occurs.
+      frame = frame[idx + EXCITATION_PERIOD*3/4:-1]
+    # If there are NUMBER_OF_PULSES pulses, we return true.
     return True
   else:
     return False
@@ -87,8 +81,8 @@ def split_frame(frame):
   echoes = [] # Create an echoes list.
 
   for direction in DIRECTIONS:
-    # Perform sanity check for only 1 signal in frame
-    if frame_sanity_check(frame[0:SIGNAL_LENGTH]) == True:
+    # Perform sanity check for only 1 signal in frame.
+    if frame_sanity_check(frame[0:SIGNAL_LENGTH]):
       # Detect the edge of the excitation pulse
       edge = edge_detection(frame)
       

@@ -17,26 +17,24 @@
 # Authors: Karel Mundnich <kmundnic@ing.uchile.cl>
 
 import data_preprocessing as dpp
+import utilities
 import numpy as np
 import unittest
 
 class TestDataPreprocessing(unittest.TestCase):
   
   def setUp(self):
+    # Data paths
     self.file_noecho = './test_data/frame_no_echo.nc'
     self.file_v_zero = './test_data/frame_v_zero.nc'
     self.file_faulty = './test_data/frame_with_faulty_excitation.nc'
     self.file_noexci = './test_data/frame_with_no_excitation.nc'
     
-  def test_load_data_from_file(self):
-    self.assertEqual(type(dpp.load_data_from_file(self.file_noecho)),
-                     np.ndarray)
-    self.assertEqual(type(dpp.load_data_from_file(self.file_v_zero)),
-                     np.ndarray)
-    self.assertEqual(type(dpp.load_data_from_file(self.file_faulty)),
-                     np.ndarray)
-    self.assertEqual(type(dpp.load_data_from_file(self.file_noexci)),
-                     np.ndarray)
+    # Data loading
+    self.echoes_noecho = utilities.load_data_from_file(self.file_noecho)
+    self.echoes_v_zero = utilities.load_data_from_file(self.file_v_zero)
+    self.echoes_faulty = utilities.load_data_from_file(self.file_faulty)
+    self.echoes_noexci = utilities.load_data_from_file(self.file_noexci)
     
   def test_frame_sanity_check(self):
     measurement_noecho = dpp.load_data_from_file(self.file_noecho)
