@@ -32,6 +32,13 @@
 #include <avr/sleep.h>
 #include "pulse_generation.h"
 
+// Number of pulses to excite the transducer.
+#define EXCITATION_PULSES 3
+// Number of tics (time) to listen the excitation signal.
+#define DRIVING_TICKS 3
+// Number of tics (time) to listen the echo signal.
+#define LISTENING_TICKS 40
+
 /* Pin allocation
  * PB0 => ADC select 0
  * PB1 => ADC select 1
@@ -81,10 +88,6 @@ ISR (INT0_vect)
   setup_timer(20, DRIVE_NORTH);
 }
 
-
-
-
-
 ISR(TIMER0_COMPA_vect) {
   timer0_running_ = false;
   TCCR0B &= 0xF8; //disable counter
@@ -93,32 +96,28 @@ ISR(TIMER0_COMPA_vect) {
   switch (state_) {
   case IDLE:
     PORTB = 0x06; // Pulse -> ADC
-    PORTC = 0xFF; // Disable All
     break;
   case DRIVE_NORTH:
     PORTB = 0x06; // Pulse -> ADC
-    start_pulses(3, 0xFE);
-    setup_timer(3, LISTEN_SOUTH);
+    start_pulses(EXCITATION_PULSES, 0x01);
+    setup_timer(DRIVING_TICKS, LISTEN_SOUTH);
     break;
   case LISTEN_SOUTH:
     PORTB = 0x01; // South -> ADC
-    PORTC = 0xFF; // Disable All
-    setup_timer(100, TRANSITION_NORTH_TO_SOUTH);
+    setup_timer(LISTENING_TICKS, TRANSITION_NORTH_TO_SOUTH);
     break;
   case TRANSITION_NORTH_TO_SOUTH:
     PORTB = 0x06; // Pulse -> ADC
-    PORTC = 0xFF; // Disable All
     setup_timer(10, DRIVE_SOUTH);
     break;
   case DRIVE_SOUTH:
     PORTB = 0x06; // Pulse -> ADC
-    start_pulses(3, 0xFD);
-    setup_timer(3, LISTEN_NORTH);
+    start_pulses(EXCITATION_PULSES, 0x02);
+    setup_timer(DRIVING_TICKS, LISTEN_NORTH);
     break;
   case LISTEN_NORTH:
     PORTB = 0x00; // North -> ADC
-    PORTC = 0xFF; // Disable All
-    setup_timer(100, IDLE);
+    setup_timer(LISTENING_TICKS, IDLE);
     break;
   }
 }

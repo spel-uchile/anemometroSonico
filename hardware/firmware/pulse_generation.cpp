@@ -22,8 +22,8 @@
 #include <avr/io.h>
 #include <avr/interrupt.h>
 
-#define PULSE_HALF_WIDTH 400
-#define DISABLE_ALL 0xFF
+#define PULSE_HALF_WIDTH 250
+#define DISABLE_ALL 0x00
 
 /* Pulse generation uses the COUNTER1, TIMER1 COMPARATOR A, and the folling
  * variables.
@@ -61,6 +61,7 @@ ISR(TIMER1_COMPA_vect) {
   PORTC = next_enable;
   PIND = (1<<PD3) | (1<<PD4); // flip PD3 y PD4
   if (--remain_pulses == 0) {
+    PIND = (1<<PD3) | (1<<PD4); // flip again to keep polarity consitent
     TCCR1B &= ~(1<<CS10);
     TIMSK1 &= ~(1<<OCIE1A);
     TIMSK1 &= ~(1<<OCIE1B);
