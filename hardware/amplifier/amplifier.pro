@@ -1,4 +1,4 @@
-update=Mon Nov 18 14:19:03 2013
+update=Wed Nov 27 08:30:20 2013
 version=1
 last_client=eeschema
 [cvpcb]
@@ -85,3 +85,4 @@ LibName29=contrib
 LibName30=valves
 LibName31=AD8223
 LibName32=LT1010
+LibName33=INA2128
