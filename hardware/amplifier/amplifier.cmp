@@ -1,0 +1,108 @@
+Cmp-Mod V01 Created by CvPcb (2013-jul-07)-stable date = Wed Nov 27 13:46:17 2013
+
+BeginCmp
+TimeStamp = /5295E281;
+Reference = C101;
+ValeurCmp = 0.1uF;
+IdModule  = SM0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /527A9C78;
+Reference = C102;
+ValeurCmp = 1uF;
+IdModule  = SM0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /527A9C87;
+Reference = C103;
+ValeurCmp = 10uF;
+IdModule  = SM1206;
+EndCmp
+
+BeginCmp
+TimeStamp = /5295E26D;
+Reference = C104;
+ValeurCmp = 0.1uF;
+IdModule  = SM0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /5295E251;
+Reference = C105;
+ValeurCmp = 0.1uF;
+IdModule  = SM0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /527A8858;
+Reference = D101;
+ValeurCmp = 1N4732;
+IdModule  = D4;
+EndCmp
+
+BeginCmp
+TimeStamp = /5295D7FF;
+Reference = K101;
+ValeurCmp = CONN_3;
+IdModule  = bornier3;
+EndCmp
+
+BeginCmp
+TimeStamp = /527A8942;
+Reference = K102;
+ValeurCmp = Out;
+IdModule  = bornier3;
+EndCmp
+
+BeginCmp
+TimeStamp = /527A892A;
+Reference = P101;
+ValeurCmp = Sensor;
+IdModule  = bornier2;
+EndCmp
+
+BeginCmp
+TimeStamp = /527A87E3;
+Reference = R101;
+ValeurCmp = 1K;
+IdModule  = SM1206;
+EndCmp
+
+BeginCmp
+TimeStamp = /527908C9;
+Reference = R102;
+ValeurCmp = R;
+IdModule  = SM1206;
+EndCmp
+
+BeginCmp
+TimeStamp = /52961E5C;
+Reference = R103;
+ValeurCmp = R;
+IdModule  = R3-LARGE_PADS;
+EndCmp
+
+BeginCmp
+TimeStamp = /527A8FF5;
+Reference = U101;
+ValeurCmp = LT1010;
+IdModule  = DIP-8__300;
+EndCmp
+
+BeginCmp
+TimeStamp = /5295DAE9;
+Reference = U102;
+ValeurCmp = INA2128;
+IdModule  = SO16L;
+EndCmp
+
+BeginCmp
+TimeStamp = /5295DD94;
+Reference = U103;
+ValeurCmp = LT1010;
+IdModule  = DIP-8__300;
+EndCmp
+
+EndListe
