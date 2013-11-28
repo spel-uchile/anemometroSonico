@@ -15,8 +15,7 @@
 # along with this program.  If not, see <http:#www.gnu.org/licenses/>.
 #
 # Authors: Luis Alberto Herrera <herrera.luis.alberto@gmail.com>
-
-from pylab import *
+import matplotlib.pyplot as plt
 import numpy as np
 import sys
 from scipy.io import netcdf
@@ -26,5 +25,5 @@ data = f.variables['frame']
 print(data.shape)
 f.close()
 
-plot(data[:])
-show()
+plt.plot(data[:])
+plt.show()
