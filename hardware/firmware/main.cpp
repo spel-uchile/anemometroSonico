@@ -38,6 +38,8 @@
 #define DRIVING_TICKS 1
 // Number of tics (time) to listen the echo signal.
 #define LISTENING_TICKS 40
+//
+#define TRANSITION_TICKS 2
 
 /* Pin allocation
  * PB0 => ADC select 0
@@ -62,7 +64,10 @@ typedef enum {
   DRIVE_EAST,
   LISTEN_WEST,
   DRIVE_WEST,
-  LISTEN_EAST
+  LISTEN_EAST,
+  TRANSITION1,
+  TRANSITION2,
+  TRANSITION3
 } state_t;
 // FSM current state.
 state_t state_;
@@ -107,8 +112,13 @@ ISR(TIMER0_COMPA_vect) {
     break;
   case LISTEN_SOUTH:
     PORTB = 0x01; // South -> ADC
-    setup_timer(LISTENING_TICKS, DRIVE_SOUTH);
+    setup_timer(LISTENING_TICKS, TRANSITION1);
     break;
+  case TRANSITION1:
+    PORTB = 0x06; // Pulse -> ADC
+    setup_timer(TRANSITION_TICKS, DRIVE_SOUTH);
+    break;
+
   case DRIVE_SOUTH:
     PORTB = 0x01; // South -> ADC
     start_pulses(EXCITATION_PULSES, 0x02);
@@ -116,7 +126,11 @@ ISR(TIMER0_COMPA_vect) {
     break;
   case LISTEN_NORTH:
     PORTB = 0x00; // North -> ADC
-    setup_timer(LISTENING_TICKS, DRIVE_EAST);
+    setup_timer(LISTENING_TICKS, TRANSITION2);
+    break;
+  case TRANSITION2:
+    PORTB = 0x06; // Pulse -> ADC
+    setup_timer(TRANSITION_TICKS, DRIVE_EAST);
     break;
 
   case DRIVE_EAST:
@@ -126,8 +140,13 @@ ISR(TIMER0_COMPA_vect) {
     break;
   case LISTEN_WEST:
     PORTB = 0x03; // West -> ADC
-    setup_timer(LISTENING_TICKS, DRIVE_WEST);
+    setup_timer(LISTENING_TICKS, TRANSITION3);
     break;
+  case TRANSITION3:
+    PORTB = 0x06; // Pulse -> ADC
+    setup_timer(TRANSITION_TICKS, DRIVE_WEST);
+    break;
+
   case DRIVE_WEST:
     PORTB = 0x03; // West -> ADC
     start_pulses(EXCITATION_PULSES, 0x08);
