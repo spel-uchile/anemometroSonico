@@ -22,7 +22,8 @@ extern "C" {
 #include <mpsse.h>
 }
 
-#define FRAME_SIZE 100000
+// Frame size in number of samples.
+#define FRAME_SIZE 10000
 
 
 ADCReader::ADCReader()
@@ -40,7 +41,8 @@ void ADCReader::GetFrame(double *data, int data_size) {
   if (adc_ != NULL) {
     if (adc_->open) {
       Start(adc_);
-      FastRead(adc_, reinterpret_cast<char*>(reading_buffer_), FRAME_SIZE);
+      FastRead(adc_, reinterpret_cast<char*>(reading_buffer_),
+               FRAME_SIZE*sizeof(int16_t));
       Stop(adc_);
 
       for (int i = 0; i < FRAME_SIZE, i < data_size; i++) {
@@ -66,4 +68,10 @@ double ADCReader::ConvertFromADCFormat(int16_t data) {
   *left_pointer = right;
   *right_pointer = left;
   return data;
+}
+
+void ADCReader::GetNFrames(double *buffer, int repetitions, int samples) {
+  for (int i=0; i<repetitions; i++) {
+    GetFrame(buffer+i*samples, samples);
+  }
 }

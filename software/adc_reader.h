@@ -41,6 +41,10 @@ class ADCReader {
   // Converts a single reading from the ADC format to double.
   static double ConvertFromADCFormat(int16_t data);
 
+  // Perform repetitions calls to get frame and store them in the matrix pointed
+  // by buffer.
+  void GetNFrames(double *buffer, int repetition, int samples);
+
  private:
   // Communication interface with the ADC.
   struct mpsse_context *adc_;

@@ -13,10 +13,12 @@ import_array();
 %}
 
 %apply (double* INPLACE_ARRAY1, int DIM1) {(double *buffer, int buffer_size)};
+%apply (double* INPLACE_ARRAY2, int DIM1, int DIM2) {(double *buffer, int repetitions, int samples)};
 
 class ADCReader {
  public:
   ADCReader();
   ~ADCReader();
   void GetFrame(double *buffer, int buffer_size);
+  void GetNFrames(double *buffer, int repetitions, int samples);
 };
