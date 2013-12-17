@@ -31,11 +31,14 @@ parser.add_argument("--output_folder",
                     help="Folder where the records will be stored. Must exist.")
 parser.add_argument("--serial_port",
                     help=".")
+parser.add_argument("--repetitions", type=int,
+                    help="Number of frames to record.")
 args = parser.parse_args()
 
 def main():
   serial_port = serial.Serial(args.serial_port, 19200, timeout=1)
   reader = adc_reader.ADCReader()
+  data = np.zeros((args.repetitions, 10000))
   while True:
     serial_port.flushInput()
     gps_line = serial_port.readline()
@@ -56,8 +59,7 @@ def main():
         reg_match.group(1), reg_match.group(2),
         reg_match.group(3), reg_match.group(4))
       print "Recording to " + output_file_name
-      data = np.zeros(10000)
-      reader.GetFrame(data)
+      reader.GetNFrames(data)
       np.save(output_file_name, data)
 
 if __name__ == "__main__":

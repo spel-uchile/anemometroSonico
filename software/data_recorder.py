@@ -32,15 +32,8 @@ args = parser.parse_args()
 
 reader = adc_reader.ADCReader()
 
+data = np.zeros((args.repetitions, 10000))
 
-for i in range(args.repetitions):
-  output_file_name = "%s_%04d.nc"%(args.prefix, i)
-  print "Recording to " + output_file_name
-  output_file = netcdf.netcdf_file(output_file_name, 'w')
-  output_file.createDimension('value', None)
-  cdf_data = output_file.createVariable('frame', 'f', ('value',))
-  data = np.zeros(10000)
-  reader.GetFrame(data)
-  cdf_data[:] = data
-  output_file.close()
-
+print "Recording to " + args.prefix
+reader.GetNFrames(data)
+np.save(args.prefix, data)

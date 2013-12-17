@@ -18,12 +18,8 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import sys
-from scipy.io import netcdf
 
-f = netcdf.netcdf_file(sys.argv[1], 'r')
-data = f.variables['frame']
-print(data.shape)
-f.close()
+data = np.load(sys.argv[1])
 
-plt.plot(data[:])
+plt.plot(np.transpose(data))
 plt.show()
