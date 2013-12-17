@@ -21,7 +21,6 @@ import numpy as np
 import serial
 import re
 import os
-from scipy.io import netcdf
 
 import adc_reader
 
@@ -30,7 +29,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument("--output_folder",
                     help="Folder where the records will be stored. Must exist.")
 parser.add_argument("--serial_port",
-                    help=".")
+                    help="Device where the GPS is connected.")
 parser.add_argument("--repetitions", type=int,
                     help="Number of frames to record.")
 args = parser.parse_args()
@@ -38,7 +37,7 @@ args = parser.parse_args()
 def main():
   serial_port = serial.Serial(args.serial_port, 19200, timeout=1)
   reader = adc_reader.ADCReader()
-  data = np.zeros((args.repetitions, 10000))
+  data = np.zeros((args.repetitions, adc_reader.kFrameSize))
   while True:
     serial_port.flushInput()
     gps_line = serial_port.readline()

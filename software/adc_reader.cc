@@ -22,14 +22,11 @@ extern "C" {
 #include <mpsse.h>
 }
 
-// Frame size in number of samples.
-#define FRAME_SIZE 10000
-
 
 ADCReader::ADCReader()
   : adc_(NULL) {
   adc_ = MPSSE(SPI0, kSpiClock, MSB);
-  reading_buffer_ = new int16_t[FRAME_SIZE];
+  reading_buffer_ = new int16_t[kFrameSize];
 }
 
 ADCReader::~ADCReader() {
@@ -42,10 +39,10 @@ void ADCReader::GetFrame(double *data, int data_size) {
     if (adc_->open) {
       Start(adc_);
       FastRead(adc_, reinterpret_cast<char*>(reading_buffer_),
-               FRAME_SIZE*sizeof(int16_t));
+               kFrameSize*sizeof(int16_t));
       Stop(adc_);
 
-      for (int i = 0; i < FRAME_SIZE, i < data_size; i++) {
+      for (int i = 0; i < kFrameSize, i < data_size; i++) {
         data[i] = ConvertFromADCFormat(reading_buffer_[i]);
       }
     }

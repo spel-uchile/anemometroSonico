@@ -32,7 +32,7 @@ args = parser.parse_args()
 
 reader = adc_reader.ADCReader()
 
-data = np.zeros((args.repetitions, 10000))
+data = np.zeros((args.repetitions, adc_reader.kFrameSize))
 
 print "Recording to " + args.prefix
 reader.GetNFrames(data)

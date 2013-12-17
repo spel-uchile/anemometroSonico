@@ -21,6 +21,9 @@
 
 #include <cstdint>
 
+// Frame size in number of samples.
+static const int kFrameSize = 10000;
+
 struct mpsse_context;
 
 // This class provides access to the hardware of the anemometer.

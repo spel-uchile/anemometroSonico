@@ -5,7 +5,7 @@ import numpy as np
 
 from pylab import *
 
-data = np.zeros(10000)
+data = np.zeros(adc_reader.kFrameSize)
 
 reader = adc_reader.ADCReader()
 reader.GetFrame(data)
