@@ -52,7 +52,7 @@
 
 /* System State Machine.
  * The sistem state is evaluated in TIMER0 COMPARARTOR A interruption. The
- *following definitions control the state machine.
+ * following definitions control the state machine.
  */
 // FSM states.
 typedef enum {

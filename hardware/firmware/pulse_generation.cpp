@@ -37,7 +37,6 @@ uint8_t next_portd;
 uint8_t next_enable;
 
 
-
 void start_pulses(uint8_t pulses, uint8_t enable_mask) {
   if (!generating_pulses) {
     generating_pulses = true;
